@@ -73,9 +73,17 @@ class LoginVC: UIViewController {
         print("login Tapped")
       
         
-        navigationController?.popViewController(animated: false)
+        // On a successful login, swapout the loginNC with the directoryNC
+        // More handling for later when login screen appears over the top of an active navController and can just pop from the stack if the user is the same as the last logged in user.
         
-
+        
+        if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+            
+            directoryVC.stateController = self.stateController
+            UIApplication.shared.windows.first?.rootViewController = directoryNC
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+        }
     }
     
     //# MARK: - Segues

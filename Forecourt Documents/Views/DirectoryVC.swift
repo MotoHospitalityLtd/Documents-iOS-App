@@ -20,8 +20,6 @@ class DirectoryVC: UIViewController, HasBackButton {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        
         uiSetup()
     }
     
