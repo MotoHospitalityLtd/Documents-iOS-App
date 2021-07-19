@@ -21,7 +21,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var loginTopConstraint: NSLayoutConstraint!
     
-    
     //# MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +28,12 @@ class LoginVC: UIViewController {
         uiSetup()
     }
     
-    
     //# MARK: - Orientation Changes
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         updateConstraints(forFrameSize: size)
     }
     
-    func updateConstraints(forFrameSize size: CGSize) {
+    private func updateConstraints(forFrameSize size: CGSize) {
         if size.height < 1080 {
             print("Landscape")
             logoTopConstraint.constant = 15
@@ -53,8 +51,14 @@ class LoginVC: UIViewController {
 
     //# MARK: - Setup
     private func uiSetup() {
+        // Update the layout constraints depending on orientation
         updateConstraints(forFrameSize: self.view.frame.size)
+        
+        // Setup the textFields
         textFieldSetup()
+        
+        // Hide back button
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     private func textFieldSetup() {
@@ -67,6 +71,11 @@ class LoginVC: UIViewController {
     //# MARK: - Button Actions
     @IBAction func loginTapped(_ sender: Any) {
         print("login Tapped")
+      
+        
+        navigationController?.popViewController(animated: false)
+        
+
     }
     
     //# MARK: - Segues

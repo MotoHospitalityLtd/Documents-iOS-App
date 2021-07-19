@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jyS-Ce-wsM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nbO-8t-VGI">
     <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -22,14 +22,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TKJ-pY-iYs">
-                                <rect key="frame" x="355" y="100.5" width="100" height="99"/>
+                                <rect key="frame" x="355" y="50.5" width="100" height="99"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ddU-kn-coh"/>
                                     <constraint firstAttribute="width" constant="100" id="hTE-Ac-NOi"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Employee Number" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jA3-8p-2Qe" customClass="PlainTextField" customModule="Forecourt_Documents" customModuleProvider="target">
-                                <rect key="frame" x="280" y="317" width="250" height="50"/>
+                                <rect key="frame" x="280" y="267" width="250" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="F10-3P-M9p"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth: DDMMYYYY" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9HL-pW-DDa" customClass="PlainTextField" customModule="Forecourt_Documents" customModuleProvider="target">
-                                <rect key="frame" x="280" y="377" width="250" height="50"/>
+                                <rect key="frame" x="280" y="327" width="250" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ag3-vG-wUZ"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEc-vw-6ae">
-                                <rect key="frame" x="280" y="443" width="250" height="50"/>
+                                <rect key="frame" x="280" y="393" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.4784809947" blue="0.99987572430000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3Dg-Ja-dfp"/>
@@ -72,13 +72,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecourt Documents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5q-5X-45K">
-                                <rect key="frame" x="288.5" y="206" width="233.5" height="28"/>
+                                <rect key="frame" x="288.5" y="156" width="233.5" height="28"/>
                                 <fontDescription key="fontDescription" name="Asap-Regular" family="Asap" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-6V-tdN">
-                                <rect key="frame" x="280" y="284" width="250" height="34"/>
+                                <rect key="frame" x="280" y="234" width="250" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="HEz-mr-ung"/>
                                     <constraint firstAttribute="height" constant="34" id="YxW-NC-hsL"/>
@@ -118,22 +118,6 @@
             </objects>
             <point key="canvasLocation" x="-47.407407407407405" y="-679.44444444444446"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="VYW-VS-ODg">
-            <objects>
-                <navigationController id="jyS-Ce-wsM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G75-7X-iSr">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="PCo-P5-kZr" kind="relationship" relationship="rootViewController" id="k2B-g3-rVk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JLc-7F-l4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-830" y="-364"/>
-        </scene>
         <!--MenuVC-->
         <scene sceneID="E2J-Ei-aA1">
             <objects>
@@ -159,31 +143,44 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="EOh-4t-n7h"/>
-                    <connections>
-                        <segue destination="nEV-Nl-rhc" kind="show" identifier="showDirectoryVC" id="SWs-zg-cgk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiS-mY-fEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="1"/>
+            <point key="canvasLocation" x="-967" y="545"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LNj-S9-yr8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7f-r8-hep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="DirectoryNC" id="nbO-8t-VGI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Vw-i3-yiv">
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nEV-Nl-rhc" kind="relationship" relationship="rootViewController" id="Hk5-Dx-haj"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-47" y="1"/>
         </scene>
         <!--Title-->
         <scene sceneID="jhC-Yq-Has">
             <objects>
                 <viewController storyboardIdentifier="DirectoryVC" id="nEV-Nl-rhc" customClass="DirectoryVC" customModule="Forecourt_Documents" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O2Y-cJ-Sjs">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ghq-aC-ST2">
-                                <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                                <rect key="frame" x="0.0" y="50" width="810" height="1030"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DirectoryCell" rowHeight="50" id="EVl-Pk-PFh" customClass="DirectoryCell" customModule="Forecourt_Documents" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="704" height="50"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="810" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EVl-Pk-PFh" id="IIh-Vs-2OV">
-                                            <rect key="frame" x="0.0" y="0.0" width="678.5" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="784.5" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Aa-Ny-I8r">
@@ -195,7 +192,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directory Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTl-Gd-U5X">
-                                                    <rect key="frame" x="58" y="0.0" width="612.5" height="50"/>
+                                                    <rect key="frame" x="58" y="0.0" width="718.5" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="MK7-ZW-Nap"/>
                                                     </constraints>
@@ -220,10 +217,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentCell" rowHeight="50" id="s5u-eh-o1a" customClass="DocumentCell" customModule="Forecourt_Documents" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.5" width="704" height="50"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="810" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s5u-eh-o1a" id="hOp-Eg-wr5">
-                                            <rect key="frame" x="0.0" y="0.0" width="704" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ocu-oF-Qe8">
@@ -235,7 +232,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8b-7Y-ORE">
-                                                    <rect key="frame" x="58" y="0.0" width="612.5" height="50"/>
+                                                    <rect key="frame" x="58" y="0.0" width="718.5" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Bdl-OP-dz4"/>
                                                     </constraints>
@@ -292,7 +289,7 @@
             <objects>
                 <viewController storyboardIdentifier="DocumentVC" id="KRA-bC-gHP" customClass="DocumentVC" customModule="Forecourt_Documents" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bpV-sb-Bh6">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FJv-Hj-LSW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

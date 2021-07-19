@@ -19,6 +19,8 @@ class DirectoryVC: UIViewController, HasBackButton {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+       
         
         uiSetup()
     }
@@ -27,11 +29,10 @@ class DirectoryVC: UIViewController, HasBackButton {
     private func uiSetup() {
         self.title = stateController.currentDirectory.name
         
-        configureBackButton()
+        if navigationController!.viewControllers.count > 1 {
+            configureBackButton()
+        }
         
-        
-        
-       
         configureSearchController()
     }
     
