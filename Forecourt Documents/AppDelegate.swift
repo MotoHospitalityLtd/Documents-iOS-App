@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var stateController = StateController()
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        if let navController = window?.rootViewController as? UINavigationController, let menuVC = navController.viewControllers[0] as? MenuVC {
-            menuVC.stateController = self.stateController
+        if let navController = window?.rootViewController as? UINavigationController, let loginVC = navController.viewControllers[0] as? LoginVC {
+            loginVC.stateController = self.stateController
         }
 
         return true

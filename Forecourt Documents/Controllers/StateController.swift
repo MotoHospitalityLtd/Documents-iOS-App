@@ -12,6 +12,11 @@ class StateController {
     //# MARK: - Data:
     var coreData: CoreData = CoreData()
     
+    //# MARK: - Controllers:
+//    let networkController: NetworkController
+    
+ 
+    
     var fakeDataProvider = FakeDataProvider()
 //    var rootDirectories: [Directory]
         // Training

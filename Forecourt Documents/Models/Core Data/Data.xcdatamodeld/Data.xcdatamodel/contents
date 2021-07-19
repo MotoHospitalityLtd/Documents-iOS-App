@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DirectoryMO" representedClassName="DirectoryMO" syncable="YES">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="documents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DocumentMO" inverseName="directory" inverseEntity="DocumentMO"/>
+        <relationship name="parentDirectory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DirectoryMO" inverseName="subDirectories" inverseEntity="DirectoryMO"/>
+        <relationship name="subDirectories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DirectoryMO" inverseName="parentDirectory" inverseEntity="DirectoryMO"/>
+    </entity>
+    <entity name="DocumentMO" representedClassName="DocumentMO" syncable="YES">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="url" attributeType="String"/>
+        <relationship name="directory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DirectoryMO" inverseName="documents" inverseEntity="DirectoryMO"/>
+    </entity>
+    <entity name="UserMO" representedClassName="UserMO" syncable="YES">
+        <attribute name="password" attributeType="String"/>
+        <attribute name="token" attributeType="String"/>
+        <attribute name="username" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="DirectoryMO" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="DocumentMO" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="UserMO" positionX="-36" positionY="9" width="128" height="74"/>
+    </elements>
+</model>
