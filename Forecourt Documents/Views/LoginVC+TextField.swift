@@ -17,11 +17,9 @@ extension LoginVC: UITextFieldDelegate {
 
         switch TextField.init(rawValue: textField.tag)! {
         case .employeeNumber:
-            dateOfBirthTextField.returnKeyType = .next
             dateOfBirthTextField.becomeFirstResponder()
 
         case .dateOfBirth:
-            dateOfBirthTextField.returnKeyType = .search
             loginTapped(self)
         }
 

@@ -23,6 +23,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TKJ-pY-iYs">
                                 <rect key="frame" x="355" y="100.5" width="100" height="99"/>
+                                <color key="tintColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ddU-kn-coh"/>
                                     <constraint firstAttribute="width" constant="100" id="hTE-Ac-NOi"/>
@@ -58,7 +59,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEc-vw-6ae">
                                 <rect key="frame" x="280" y="443" width="250" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.4784809947" blue="0.99987572430000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3Dg-Ja-dfp"/>
                                     <constraint firstAttribute="height" constant="50" id="wm4-BU-qb1"/>
@@ -111,6 +112,7 @@
                         <outlet property="employeeNumberTextField" destination="jA3-8p-2Qe" id="Byn-zw-8uU"/>
                         <outlet property="loginButton" destination="jEc-vw-6ae" id="hO2-T6-7g7"/>
                         <outlet property="loginTopConstraint" destination="HG0-7P-KKj" id="QXv-8n-ipz"/>
+                        <outlet property="logo" destination="TKJ-pY-iYs" id="ti4-mw-mp3"/>
                         <outlet property="logoTopConstraint" destination="nfR-Uw-NWZ" id="5Rv-K1-yji"/>
                     </connections>
                 </viewController>
@@ -148,11 +150,10 @@
             </objects>
             <point key="canvasLocation" x="-967" y="545"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--TestNC-->
         <scene sceneID="LNj-S9-yr8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I7f-r8-hep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController storyboardIdentifier="DirectoryNC" id="nbO-8t-VGI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DirectoryNC" id="nbO-8t-VGI" customClass="TestNC" customModule="Forecourt_Documents" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Vw-i3-yiv">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -161,6 +162,7 @@
                         <segue destination="nEV-Nl-rhc" kind="relationship" relationship="rootViewController" id="Hk5-Dx-haj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7f-r8-hep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-47" y="1"/>
         </scene>
@@ -304,11 +306,10 @@
             </objects>
             <point key="canvasLocation" x="1390" y="1"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--TestNC-->
         <scene sceneID="rZV-gm-mER">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lyV-4J-9g8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController storyboardIdentifier="LoginNC" id="kdC-e0-c8p" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNC" id="kdC-e0-c8p" customClass="TestNC" customModule="Forecourt_Documents" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1H-OV-qXm">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -317,6 +318,7 @@
                         <segue destination="PCo-P5-kZr" kind="relationship" relationship="rootViewController" id="GV0-OL-pWy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyV-4J-9g8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-724" y="-679"/>
         </scene>

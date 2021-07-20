@@ -11,7 +11,8 @@ class BackButton: UIBarButtonItem {
     init(sender: UIViewController) {
         super.init()
         
-        self.image = UIImage(named: "left_arrow")
+//        self.image = UIImage(named: "left_arrow")
+        self.image = UIImage(systemName: "chevron.backward")
         self.style = .plain
         self.target = sender
         self.imageInsets = UIEdgeInsets(top: 2, left: -8, bottom: 0, right: 0)
