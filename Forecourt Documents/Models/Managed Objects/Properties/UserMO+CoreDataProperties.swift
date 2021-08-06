@@ -2,7 +2,7 @@
 //  UserMO+CoreDataProperties.swift
 //  Forecourt Documents
 //
-//  Created by Edwards, Mike on 16/07/2021.
+//  Created by Edwards, Mike on 06/08/2021.
 //
 //
 
@@ -16,9 +16,10 @@ extension UserMO {
         return NSFetchRequest<UserMO>(entityName: "UserMO")
     }
 
-    @NSManaged public var token: String?
-    @NSManaged public var username: String?
-    @NSManaged public var password: String?
+    @NSManaged public var dateOfBirth: String?
+    @NSManaged public var employeeNumber: String?
+    @NSManaged public var expiry: Date?
+    @NSManaged public var authToken: String?
 
 }
 

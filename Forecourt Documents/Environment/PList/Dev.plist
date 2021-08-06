@@ -43,5 +43,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>PulseURL</key>
+	<string>https://$(PULSE_URL)</string>
+	<key>Environment</key>
+	<string>$(ENVIRONMENT)</string>
+	<key>S3URL</key>
+	<string>https://$(S3_URL)</string>
 </dict>
 </plist>

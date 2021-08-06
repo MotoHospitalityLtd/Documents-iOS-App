@@ -8,8 +8,8 @@
 import UIKit
 import PDFKit
 
-class DocumentVC: UIViewController, HasBackButton {
-    
+class DocumentVC: UIViewController, HasBackButton, HasMenuButton {
+   
     //# MARK: - Data
     var stateController: StateController!
     
@@ -23,7 +23,10 @@ class DocumentVC: UIViewController, HasBackButton {
     private func uiSetup() {
         
         configureBackButton()
+        configureMenuButton()
         
+        
+        // Create test PDF view
         let pdfView = PDFView()
 
         pdfView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,9 +49,17 @@ class DocumentVC: UIViewController, HasBackButton {
         performSegue(withIdentifier: "unwindFromDocumentVC", sender: self)
     }
     
+    func menuTapped(sender: UIBarButtonItem) {
+        openMenu(sender: sender, withStateController: stateController)
+    }
+    
     //# MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
        
+    }
+    
+    func unwindFromAboutVC(segue: UIStoryboardSegue) {
+        
     }
 }

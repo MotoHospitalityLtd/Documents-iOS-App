@@ -13,8 +13,8 @@ class StateController {
     var coreData: CoreData = CoreData()
     
     //# MARK: - Controllers:
-//    let networkController: NetworkController
-    
+    let networkController: NetworkController
+    let authController: AuthController
  
     
     var fakeDataProvider = FakeDataProvider()
@@ -35,10 +35,8 @@ class StateController {
     
     //# MARK: - Initialisers:
     init() {
-        
-        
-        
-        print("INIT")
+        self.networkController = NetworkController(coreData: coreData)
+        self.authController = AuthController(coreData: coreData, networkController: networkController)
 
         self.rootDirectory = fakeDataProvider.testCreate()
         self.currentDirectory = rootDirectory
@@ -46,18 +44,18 @@ class StateController {
         allDocuments = fakeDataProvider.allDocuments
         filteredDocuments = allDocuments
         
-        print("Number of Directories: \(rootDirectory.subDirectories!.count)")
-        
-        print("Directory ID's")
-        print(fakeDataProvider.directoryIds)
-        
-        print("Document ID's")
-        print(fakeDataProvider.documentIds)
-        
-        print("All Documents")
-        for doc in allDocuments {
-            print(doc.title)
-        }
+//        print("Number of Directories: \(rootDirectory.subDirectories!.count)")
+//
+//        print("Directory ID's")
+//        print(fakeDataProvider.directoryIds)
+//
+//        print("Document ID's")
+//        print(fakeDataProvider.documentIds)
+//
+//        print("All Documents")
+//        for doc in allDocuments {
+//            print(doc.title)
+//        }
     }
     
     func setCurrentDirectory() {
@@ -254,22 +252,22 @@ class Directory {
         visibleItems = subDirectories! + documents!
         
         
-        print("Visible Items on Directory \(id):")
-        
-        for x in visibleItems {
-            if let y = x as? Directory {
-                
-                print(y.name)
-            }
-            
-            else {
-                let z = x as! Document
-                print(z.title)
-            }
-        }
-        
-        print("")
-        print("")
+//        print("Visible Items on Directory \(id):")
+//
+//        for x in visibleItems {
+//            if let y = x as? Directory {
+//
+//                print(y.name)
+//            }
+//            
+//            else {
+//                let z = x as! Document
+//                print(z.title)
+//            }
+//        }
+//
+//        print("")
+//        print("")
     }
 }
 

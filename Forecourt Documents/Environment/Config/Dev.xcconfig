@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  Forecourt Documents
+//
+//  Created by Edwards, Mike on 23/07/2021.
+//
+
+ENVIRONMENT = DEV
+
+PULSE_URL = document-storage-dev.moto-hospitality.co.uk
+
+S3_URL = s3.dev.moto-security.int

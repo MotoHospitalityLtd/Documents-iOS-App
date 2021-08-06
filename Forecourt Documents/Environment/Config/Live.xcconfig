@@ -1,0 +1,12 @@
+//
+//  Live.xcconfig
+//  Forecourt Documents
+//
+//  Created by Edwards, Mike on 23/07/2021.
+//
+
+ENVIRONMENT = LIVE
+
+PULSE_URL = pulse.moto-security.int
+
+S3_URL = s3.moto-security.int

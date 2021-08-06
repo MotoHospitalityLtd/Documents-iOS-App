@@ -7,8 +7,8 @@
 
 import UIKit
 
-class DirectoryVC: UIViewController, HasBackButton {
-    
+class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
+  
     //# MARK: - Data
     var stateController: StateController!
     
@@ -32,6 +32,7 @@ class DirectoryVC: UIViewController, HasBackButton {
         }
         
         configureSearchController()
+        configureMenuButton()
     }
     
     
@@ -40,9 +41,15 @@ class DirectoryVC: UIViewController, HasBackButton {
         performSegue(withIdentifier: "unwindFromDirectoryVC", sender: self)
     }
     
+    func menuTapped(sender: UIBarButtonItem) {
+        openMenu(sender: sender, withStateController: stateController)
+    }
+    
     //# MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDocumentVC" {
+            let documentVC = segue.destination as! DocumentVC
+            documentVC.stateController = stateController
 //            searchController.isActive = false
             
         }
@@ -69,5 +76,9 @@ class DirectoryVC: UIViewController, HasBackButton {
 //
 //        // Refresh tableView
 //        tableView.reloadData()
+    }
+    
+    func unwindFromAboutVC(segue: UIStoryboardSegue) {
+        
     }
 }

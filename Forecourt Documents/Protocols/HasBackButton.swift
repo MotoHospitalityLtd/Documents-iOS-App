@@ -15,6 +15,7 @@ import UIKit
 
 extension HasBackButton {
     func configureBackButton() {
+        // Create and display the back button
         self.navigationItem.setLeftBarButton(BackButton(sender: self), animated: true)
         self.navigationItem.leftBarButtonItem?.action = #selector(backTapped(sender:))
     }
