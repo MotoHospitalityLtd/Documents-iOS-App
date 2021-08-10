@@ -30,12 +30,19 @@ extension DirectoryVC: UISearchResultsUpdating {
     }
     
    internal func updateSearchResults(for searchController: UISearchController) {
+    
+    print("Search Text: \(searchController.searchBar.text)")
+    print("All Documents Count: \(stateController.documentController.allDocuments.count)")
         if let searchText = searchController.searchBar.text {
-            stateController.filteredDocuments = searchText.isEmpty ? stateController.allDocuments : stateController.allDocuments.filter() {
-                return $0.title.range(of: searchText) != nil
+            stateController.documentController.filteredDocuments = searchText.isEmpty ? stateController.documentController.allDocuments : stateController.documentController.allDocuments.filter() {
+                
+                
+                print("SEARCH STUFF")
+                print($0.title)
+                return $0.title!.range(of: searchText) != nil
             }
             
-            print("Filter Docs Count: \(stateController.filteredDocuments.count)")
+            print("Filter Docs Count: \(stateController.documentController.filteredDocuments.count)")
             
             tableView.reloadData()
         }
@@ -46,7 +53,7 @@ extension DirectoryVC: UISearchResultsUpdating {
             return .empty
         }
         
-        else if stateController.filteredDocuments.count > 0 {
+        else if stateController.documentController.filteredDocuments.count > 0 {
             return .hasResults
         }
         

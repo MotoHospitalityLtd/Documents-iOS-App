@@ -98,20 +98,10 @@ class LoginVC: UIViewController, HasMenuButton {
             case .newLogin:
                 print("New Login")
                 
-                if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
-                    
-                    directoryVC.stateController = self.stateController
-                    self.stateController.currentDirectory = self.stateController.rootDirectory
-                    
-                    self.stateController.clearData()
-                    
-                    self.downloadDirectories()
-                    
-                    
-                    
-                    UIApplication.shared.windows.first?.rootViewController = directoryNC
-                    UIApplication.shared.windows.first?.makeKeyAndVisible()
-                }
+                self.stateController.clearData()
+                self.downloadDirectories()
+                
+               
 
             case .returningUser: // Was the last user that logged in
                 print("Returning User")
@@ -175,6 +165,22 @@ class LoginVC: UIViewController, HasMenuButton {
             switch response {
             case .success(_):
                 print("Download directories success")
+                
+                
+                if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+                    
+                    directoryVC.stateController = self.stateController
+                    self.stateController.directoryController.currentDirectory = self.stateController.directoryController.rootDirectory
+                    
+                    
+                    self.stateController.documentController.loadAllDocuments()
+                  
+                    
+                    UIApplication.shared.windows.first?.rootViewController = directoryNC
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                }
+                
+                
             case .error(let httpError):
                 print("Download directories error")
             }

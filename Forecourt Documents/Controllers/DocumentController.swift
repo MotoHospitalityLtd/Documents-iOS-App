@@ -24,6 +24,8 @@ class DocumentController {
     init(coreData: CoreData, networkController: NetworkController) {
         self.coreData = coreData
         self.networkController = networkController
+        
+        loadAllDocuments()
     }
     
 //    internal func downloadDirectories(completion: @escaping (NetworkController.NetworkResponse) -> Void) {
@@ -77,6 +79,16 @@ class DocumentController {
             print("Removed document")
             coreData.persistentContainer.viewContext.delete(document)
         }
+    }
+    
+    internal func loadAllDocuments() {
+        print("Load All Documents")
+        self.allDocuments = fetchAllDocuments()
+        
+        print("All Documents")
+        print("Document Count \(allDocuments.count)")
+        
+        self.filteredDocuments = allDocuments
     }
     
     private func fetchAllDocuments() -> [DocumentMO] {

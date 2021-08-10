@@ -22,17 +22,14 @@ class StateController {
  
     
     var fakeDataProvider = FakeDataProvider()
-//    var rootDirectories: [Directory]
-        // Training
-        // Manuals
     
     //# MARK: - Controllers:
-    var directoryPath: [Int] = []
-    var rootDirectory: Directory
-    var currentDirectory: Directory
-    
-    var allDocuments: [Document]
-    var filteredDocuments: [Document]
+//    var directoryPath: [Int] = []
+//    var rootDirectory: Directory
+//    var currentDirectory: Directory
+//
+//    var allDocuments: [Document]
+//    var filteredDocuments: [Document]
     
     //# MARK: - Initialisers:
     init() {
@@ -41,11 +38,11 @@ class StateController {
         self.directoryController = DirectoryController(coreData: coreData, networkController: networkController)
         self.documentController = DocumentController(coreData: coreData, networkController: networkController)
 
-        self.rootDirectory = fakeDataProvider.testCreate()
-        self.currentDirectory = rootDirectory
-        
-        allDocuments = fakeDataProvider.allDocuments
-        filteredDocuments = allDocuments
+//        self.rootDirectory = fakeDataProvider.testCreate()
+//        self.currentDirectory = rootDirectory
+//
+//        allDocuments = fakeDataProvider.allDocuments
+//        filteredDocuments = allDocuments
         
 //        print("Number of Directories: \(rootDirectory.subDirectories!.count)")
 //
@@ -68,29 +65,29 @@ class StateController {
         coreData.save(context: coreData.persistentContainer.viewContext)
     }
     
-    func setCurrentDirectory() {
-        
-        // Array of tapped indexes from visible items (can only be directory)
-        // [0, 0, 1]
-        print("DirectoryPath Before: \(directoryPath)")
-        
-        directoryPath.removeLast(1)
-        
-        print("DirectoryPath After: \(directoryPath)")
-        
-        var position = rootDirectory
-        for index in directoryPath {
-            
-            position = getSubDirectory(ofDirectory: position, withIndex: index)
-            
-        }
-        
-        currentDirectory = position
-    }
-    
-    func getSubDirectory(ofDirectory directory: Directory, withIndex index: Int) -> Directory {
-        return directory.visibleItems[index] as! Directory
-    }
+//    func setCurrentDirectory() {
+//        
+//        // Array of tapped indexes from visible items (can only be directory)
+//        // [0, 0, 1]
+//        print("DirectoryPath Before: \(directoryPath)")
+//        
+//        directoryPath.removeLast(1)
+//        
+//        print("DirectoryPath After: \(directoryPath)")
+//        
+//        var position = rootDirectory
+//        for index in directoryPath {
+//            
+//            position = getSubDirectory(ofDirectory: position, withIndex: index)
+//            
+//        }
+//        
+//        currentDirectory = position
+//    }
+//    
+//    func getSubDirectory(ofDirectory directory: Directory, withIndex index: Int) -> Directory {
+//        return directory.visibleItems[index] as! Directory
+//    }
     
 //    func createRootDirectories() {
 ////        rootDirectories = Directory.createFakeDirectory(amount: 3, subDirectories: 1)!

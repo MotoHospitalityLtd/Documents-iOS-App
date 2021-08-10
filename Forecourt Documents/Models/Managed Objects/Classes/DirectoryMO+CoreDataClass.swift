@@ -14,10 +14,10 @@ public class DirectoryMO: NSManagedObject {
     
     var visibleItems: [Any] {
         get {
-            let subDirectories = subDirectories?.allObjects as? [DirectoryMO]
-            let documents = documents?.allObjects as? [DocumentMO]
+            let subDirectories = subDirectories?.allObjects as? [DirectoryMO] ?? []
+            let documents = documents?.allObjects as? [DocumentMO] ?? []
             
-            return subDirectories! + documents!
+            return subDirectories + documents
         }
     }
     

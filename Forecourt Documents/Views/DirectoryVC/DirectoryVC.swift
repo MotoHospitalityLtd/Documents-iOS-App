@@ -24,13 +24,16 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
         super.viewDidLoad()
         
         print("Directory VC View did load")
+        
+        print("All Documents Count: \(stateController.documentController.allDocuments.count)")
+        print("Filter Docs Count: \(stateController.documentController.filteredDocuments.count)")
     
         uiSetup()
     }
     
     //# MARK: - Setup
     private func uiSetup() {
-        self.title = stateController.currentDirectory.name
+        self.title = stateController.directoryController.currentDirectory!.name
         
         if navigationController!.viewControllers.count > 1 {
             configureBackButton()
@@ -78,7 +81,7 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
         tableView.deselectSelectedRow(animated: true)
         
         // Reset current directory
-        stateController.setCurrentDirectory()
+        stateController.directoryController.setCurrentDirectory()
         
         // Refresh tableView
         tableView.reloadData()

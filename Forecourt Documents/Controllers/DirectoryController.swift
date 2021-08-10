@@ -112,6 +112,32 @@ class DirectoryController {
         }
     }
     
+    
+    internal func setCurrentDirectory() {
+        
+        // Array of tapped indexes from visible items (can only be directory)
+        // [0, 0, 1]
+        print("DirectoryPath Before: \(directoryPath)")
+        
+        directoryPath.removeLast(1)
+        
+        print("DirectoryPath After: \(directoryPath)")
+        
+        var position = rootDirectory!
+        
+        for index in directoryPath {
+            
+            position = getSubDirectory(ofDirectory: position, withIndex: index)
+            
+        }
+        
+        currentDirectory = position
+    }
+    
+    internal func getSubDirectory(ofDirectory directory: DirectoryMO, withIndex index: Int) -> DirectoryMO {
+        return directory.visibleItems[index] as! DirectoryMO
+    }
+    
 //    private func createDirectories(fromJson jsonDirectories: [[String: AnyObject]]) {
 //        var rootDirectories: [DirectoryMO] = []
 //

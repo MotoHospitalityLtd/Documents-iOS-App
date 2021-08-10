@@ -21,7 +21,7 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch searchState() {
         case .empty:
-            return stateController.currentDirectory.name
+            return stateController.directoryController.currentDirectory!.name
         case .hasResults:
             return "Search Results:"
         case .noResults:
@@ -32,16 +32,16 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch searchState() {
         case .empty:
-            return stateController.currentDirectory.visibleItems.count
+            return stateController.directoryController.currentDirectory!.visibleItems.count
         case .hasResults, .noResults:
-            return stateController.filteredDocuments.count
+            return stateController.documentController.filteredDocuments.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch searchState() {
         case .empty:
-            if let directory = stateController.currentDirectory.visibleItems[indexPath.row] as? Directory {
+            if let directory = stateController.directoryController.currentDirectory!.visibleItems[indexPath.row] as? DirectoryMO {
 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DirectoryCell", for: indexPath) as! DirectoryCell
                 cell.title.text = directory.name
@@ -50,7 +50,7 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             else {
-                let document = stateController.currentDirectory.visibleItems[indexPath.row] as! Document
+                let document = stateController.directoryController.currentDirectory!.visibleItems[indexPath.row] as! DocumentMO
 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentCell", for: indexPath) as! DocumentCell
                 cell.title.text = document.title
@@ -60,7 +60,7 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
             
         case .hasResults, .noResults:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentCell", for: indexPath) as! DocumentCell
-            cell.title.text = stateController.filteredDocuments[indexPath.row].title
+            cell.title.text = stateController.documentController.filteredDocuments[indexPath.row].title
             return cell
 
         }
@@ -70,14 +70,14 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
         switch searchState() {
         case .empty:
             print("Tapped directory cell with no active search criteria")
-            if let directory = stateController.currentDirectory.visibleItems[indexPath.row] as? Directory {
+            if let directory = stateController.directoryController.currentDirectory!.visibleItems[indexPath.row] as? DirectoryMO {
                 
-                print("Visible Items: \(stateController.currentDirectory.visibleItems)")
+                print("Visible Items: \(stateController.directoryController.currentDirectory!.visibleItems)")
                 
-                stateController.directoryPath.append(indexPath.row)
-                stateController.currentDirectory = stateController.currentDirectory.visibleItems[indexPath.row] as! Directory
+                stateController.directoryController.directoryPath.append(indexPath.row)
+                stateController.directoryController.currentDirectory = directory
                 
-                print("Directory Path: \(stateController.directoryPath)")
+                print("Directory Path: \(stateController.directoryController.directoryPath)")
                 
                 let directoryVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryVC") as! DirectoryVC
                 directoryVC.stateController = self.stateController
