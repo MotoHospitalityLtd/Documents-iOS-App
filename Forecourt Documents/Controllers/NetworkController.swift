@@ -48,11 +48,19 @@ class NetworkController {
     func session(host: Host) -> URLSession {
         let config = URLSessionConfiguration.ephemeral
         switch host {
-        case .pulse:
-            config.httpAdditionalHeaders = ["Authorization": authenticatedUser?.authToken as Any, "Accept-Encoding": "gzip, deflate", "Accept": "application/json"]
+        case .documentStorage:
+            if authenticatedUser != nil {
+                config.httpAdditionalHeaders = ["Authorization": "Bearer \(authenticatedUser!.authToken!)", "Accept-Encoding": "gzip, deflate", "Accept": "application/json"]
+            }
             
-//        case .s3:
-//            config.httpAdditionalHeaders = nil
+            else {
+                config.httpAdditionalHeaders = ["Accept-Encoding": "gzip, deflate", "Accept": "application/json"]
+            }
+            
+            print("HEADERS")
+            print(config.httpAdditionalHeaders)
+        case .s3:
+            config.httpAdditionalHeaders = nil
         }
         
        
@@ -61,30 +69,30 @@ class NetworkController {
     }
     
     //# MARK: - HTTP Methods
-//    func getImage(urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
-//        
-//        let stringURL = urlPath
-//        let url: URL = URL(string: stringURL)!
-//        
-//        print("GET URL: \(url)")
-//        
-//        var requestURL = URLRequest(url: url)
-//        requestURL.httpMethod = "GET"
-//        requestURL.timeoutInterval = 30
-//        
-//        let dataTask = session(host: .s3).dataTask(with: requestURL) {(data, response, error) in
-//            let response = self.processResponse(data: data, response: response, error: error)
-//            
-//            DispatchQueue.main.async {
-//                completion(response)
-//            }
-//        }
-//        
-//        dataTask.resume()
-//    }
+    func getImage(urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
+        
+        let stringURL = urlPath
+        let url: URL = URL(string: stringURL)!
+        
+        print("GET URL: \(url)")
+        
+        var requestURL = URLRequest(url: url)
+        requestURL.httpMethod = "GET"
+        requestURL.timeoutInterval = 30
+        
+        let dataTask = session(host: .s3).dataTask(with: requestURL) {(data, response, error) in
+            let response = self.processResponse(data: data, response: response, error: error)
+            
+            DispatchQueue.main.async {
+                completion(response)
+            }
+        }
+        
+        dataTask.resume()
+    }
     
     //# MARK: - HTTP Methods
-    func get(host: Host = .pulse, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
+    func get(host: Host = .documentStorage, urlPath: String, data: Data? = nil, _ completion: @escaping (NetworkResponse) -> Void) {
         
         let hostIndex = hosts.firstIndex(where: { $0.name == host.rawValue})
         
@@ -109,7 +117,7 @@ class NetworkController {
         dataTask.resume()
     }
     
-    func post(host: Host = .pulse, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
+    func post(host: Host = .documentStorage, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
         
         let hostIndex = hosts.firstIndex(where: { $0.name == host.rawValue})
         let stringURL = hosts[hostIndex!].url! + urlPath
@@ -132,7 +140,7 @@ class NetworkController {
         dataTask.resume()
     }
     
-    func postForm(host: Host = .pulse, urlPath: String, formData: [String: Any], _ completion: @escaping (NetworkResponse) -> Void) {
+    func postForm(host: Host = .documentStorage, urlPath: String, formData: [String: Any], _ completion: @escaping (NetworkResponse) -> Void) {
         
         let hostIndex = hosts.firstIndex(where: { $0.name == host.rawValue})
         let stringURL = hosts[hostIndex!].url! + urlPath
@@ -156,7 +164,7 @@ class NetworkController {
         dataTask.resume()
     }
     
-    func patch(host: Host = .pulse, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
+    func patch(host: Host = .documentStorage, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
         
         let hostIndex = hosts.firstIndex(where: { $0.name == host.rawValue})
         let stringURL = hosts[hostIndex!].url! + urlPath
@@ -180,7 +188,7 @@ class NetworkController {
         dataTask.resume()
     }
     
-    func put(host: Host = .pulse, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
+    func put(host: Host = .documentStorage, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
         
         let hostIndex = hosts.firstIndex(where: { $0.name == host.rawValue})
         let stringURL = hosts[hostIndex!].url! + urlPath
@@ -203,7 +211,7 @@ class NetworkController {
         dataTask.resume()
     }
     
-    func delete(host: Host = .pulse, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
+    func delete(host: Host = .documentStorage, urlPath: String, data: Data?, _ completion: @escaping (NetworkResponse) -> Void) {
         
         let hostIndex = hosts.firstIndex(where: { $0.name == host.rawValue})
         let stringURL = hosts[hostIndex!].url! + urlPath
@@ -344,14 +352,14 @@ class NetworkController {
     }
     
     enum Host: String, CaseIterable  {
-        case pulse = "Pulse"
-//        case s3 = "S3"
+        case documentStorage = "DocumentStorage"
+        case s3 = "S3"
         
         var healthCheckURL: String {
             switch self {
                 
-            case .pulse: return "/login"
-//            case .s3: return "/minio/health/ready"
+            case .documentStorage: return "/login"
+            case .s3: return "/minio/health/ready"
                 
             }
         }

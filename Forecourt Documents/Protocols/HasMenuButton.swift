@@ -10,6 +10,7 @@ import UIKit
 @objc protocol HasMenuButton where Self: UIViewController {
     var navigationItem: UINavigationItem { get }
     @objc func menuTapped(sender: UIBarButtonItem)
+    @objc func logoutTapped()
     func unwindFromAboutVC(segue: UIStoryboardSegue)
 }
 
@@ -35,14 +36,25 @@ extension HasMenuButton {
 
             self.navigationController!.pushViewController(aboutVC, animated: true)
         }
-
+        
         let logOutAction = UIAlertAction(title: "Logout", style: .default) {action in
             print("Logout Tapped")
+            self.logout(stateController: stateController)
         }
-
+        
+        
+        // Add menu options for all view controllers
         menu.addAction(aboutAction)
-        menu.addAction(logOutAction)
 
+        // Add specific menu options for certain controllers
+        if self is LoginVC {
+            print("Omit logout from menu")
+        }
+        
+        else {
+            menu.addAction(logOutAction)
+        }
+        
         // Select the location of the popover
         menu.popoverPresentationController?.barButtonItem = sender
     
@@ -52,4 +64,15 @@ extension HasMenuButton {
         }
     }
     
+    private func logout(stateController: StateController) {
+        
+        if let loginNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginNC") as? UINavigationController, let loginVC = loginNC.viewControllers[0] as? LoginVC {
+            
+            stateController.networkController.authenticatedUser = nil
+            loginVC.stateController = stateController
+            
+            UIApplication.shared.windows.first?.rootViewController = loginNC
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
+    }
 }

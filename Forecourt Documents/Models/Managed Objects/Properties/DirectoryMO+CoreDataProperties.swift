@@ -2,7 +2,7 @@
 //  DirectoryMO+CoreDataProperties.swift
 //  Forecourt Documents
 //
-//  Created by Edwards, Mike on 16/07/2021.
+//  Created by Edwards, Mike on 10/08/2021.
 //
 //
 
@@ -18,10 +18,26 @@ extension DirectoryMO {
 
     @NSManaged public var id: Int64
     @NSManaged public var name: String?
-    @NSManaged public var url: String?
-    @NSManaged public var subDirectories: NSSet?
+    @NSManaged public var documents: NSSet?
     @NSManaged public var parentDirectory: DirectoryMO?
-    @NSManaged public var documents: DocumentMO?
+    @NSManaged public var subDirectories: NSSet?
+
+}
+
+// MARK: Generated accessors for documents
+extension DirectoryMO {
+
+    @objc(addDocumentsObject:)
+    @NSManaged public func addToDocuments(_ value: DocumentMO)
+
+    @objc(removeDocumentsObject:)
+    @NSManaged public func removeFromDocuments(_ value: DocumentMO)
+
+    @objc(addDocuments:)
+    @NSManaged public func addToDocuments(_ values: NSSet)
+
+    @objc(removeDocuments:)
+    @NSManaged public func removeFromDocuments(_ values: NSSet)
 
 }
 

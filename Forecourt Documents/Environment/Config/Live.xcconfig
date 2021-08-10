@@ -7,6 +7,6 @@
 
 ENVIRONMENT = LIVE
 
-PULSE_URL = pulse.moto-security.int
+DOCUMENT_STORAGE_URL = pulse.moto-security.int
 
 S3_URL = s3.moto-security.int

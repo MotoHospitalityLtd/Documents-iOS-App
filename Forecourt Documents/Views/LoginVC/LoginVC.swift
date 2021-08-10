@@ -8,6 +8,10 @@
 import UIKit
 
 class LoginVC: UIViewController, HasMenuButton {
+    func logoutTapped() {
+        
+    }
+    
     
     //# MARK: - Data
     var stateController: StateController!
@@ -79,21 +83,6 @@ class LoginVC: UIViewController, HasMenuButton {
         
         // On a successful login, swapout the loginNC with the directoryNC
         // More handling for later when login screen appears over the top of an active navController and can just pop from the stack if the user is the same as the last logged in user.
-        
-        
-//        if navigationController!.viewControllers.count > 1 {
-//            navigationController!.popViewController(animated: false)
-//        }
-//
-//        else {
-//            if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
-//
-//                directoryVC.stateController = self.stateController
-//                UIApplication.shared.windows.first?.rootViewController = directoryNC
-//                UIApplication.shared.windows.first?.makeKeyAndVisible()
-//
-//            }
-//        }
     }
     
     func loginAttempt(withUserCredential userCredential: UserCredential) {
@@ -109,24 +98,37 @@ class LoginVC: UIViewController, HasMenuButton {
             case .newLogin:
                 print("New Login")
                 
-//                if self.navigationController!.viewControllers.count > 1 {
-//                    self.navigationController!.popViewController(animated: false)
-//                }
-//
-//                else {
+                if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+                    
+                    directoryVC.stateController = self.stateController
+                    self.stateController.currentDirectory = self.stateController.rootDirectory
+                    
+                    
+            
+                    self.downloadDirectories()
+                    
+                    
+                    
+                    UIApplication.shared.windows.first?.rootViewController = directoryNC
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                }
+
+            case .returningUser: // Was the last user that logged in
+                print("Returning User")
+                
+                if self.navigationController!.viewControllers.count > 1 {
+                    print("View Check for over 1")
+                    self.navigationController!.popViewController(animated: false)
+                }
+
+                else {
                     if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
                         
                         directoryVC.stateController = self.stateController
                         UIApplication.shared.windows.first?.rootViewController = directoryNC
                         UIApplication.shared.windows.first?.makeKeyAndVisible()
-                        
                     }
-//                }
-                
-            case .returningUser: // Was the last user that logged in
-                print("Returning User")
-                
-                self.navigationController!.popViewController(animated: true)
+                }
                 
             case .error(let httpError):
                 print("error")
@@ -148,6 +150,36 @@ class LoginVC: UIViewController, HasMenuButton {
                 }
             }
         }
+    }
+    
+    func downloadDirectories() {
+
+//        stateController.directoryController.getDocument()
+
+//
+//        let url = "https://s3-dev.moto-hospitality.co.uk/dev-document-storage/Wi3hO3Nkg8D0agK8RfpNvejcBfhmrs8SeHRl66fC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minio%2F20210810%2F%2Fs3%2Faws4_request&X-Amz-Date=20210810T085003Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1800&X-Amz-Signature=41664bdb94a8813c9151d1a1e225ca85c379d4111ff122cb47390067dd7be96d"
+//
+//
+//        stateController.networkController.getImage(urlPath: url, data: nil) { response in
+//            switch response {
+//            case .success(let data):
+//                print("Successful Photo Data")
+//                print(data)
+//                self.stateController.pdfData = data
+//            case .error(let httpError):
+//                print("Error: \(httpError)")
+//            }
+//        }
+
+        stateController.directoryController.downloadDirectories { response in
+            switch response {
+            case .success(_):
+                print("Download directories success")
+            case .error(let httpError):
+                print("Download directories error")
+            }
+        }
+
     }
     
     func menuTapped(sender: UIBarButtonItem) {

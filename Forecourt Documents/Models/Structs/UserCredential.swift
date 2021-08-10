@@ -32,9 +32,9 @@ struct UserCredential: Codable {
         self.dateOfBirth = dateOfBirth
     }
     
-    // Restrict codable properties
+    // Restrict codable properties and map the used ones to api keys
     private enum CodingKeys: String, CodingKey {
-        case employeeNumber
+        case employeeNumber = "employee_number"
         case dateOfBirth = "password"
     }
 }

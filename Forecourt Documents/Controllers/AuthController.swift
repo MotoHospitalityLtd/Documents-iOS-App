@@ -33,6 +33,17 @@ class AuthController {
                 
                 completion(.returningUser)
                 
+                // Fetch existing user if one exists
+                // Check if it matches given credentials
+                // If it does and it is not expired, login
+                // if it does not match
+                    // network login
+                        // success?
+                            // remove old user
+                            // create new user
+                        // fail
+                            // forward error.
+                
                 // Success
                     // Returning User (Was the last user that logged in)
                         // Remove login screen
@@ -60,11 +71,14 @@ class AuthController {
             
             authenticateRemotely(userCredential: userCredential) { response in
                 switch response {
-                case .success(_):
-                    // Check if credential matches current logged in user
-                    // Set current user
-                    // return completion of returning user or new login.
-                print("Successful remote authentication")
+                
+                case .newLogin:
+                    completion(.newLogin)
+                    print("Successful remote authentication - New User")
+                    
+                case .returningUser:
+                    completion(.returningUser)
+                    print("Successful remote authentication - Returning User")
                 case .error(let httpError):
                     print("Error remote authentication")
                     completion(LoginResponse.error(httpError))
@@ -102,12 +116,10 @@ class AuthController {
         }
     }
     
-    private func authenticateRemotely(userCredential: UserCredential, completion: @escaping (NetworkController.NetworkResponse) -> Void) {
+    private func authenticateRemotely(userCredential: UserCredential, completion: @escaping (LoginResponse) -> Void) {
         
         // Encode the user credential
         let data = try? JSONEncoder().encode(userCredential)
-        
-        data?.printJSON()
         
         self.networkController.post(urlPath: "/api/auth", data: data) { response in
             DispatchQueue.main.async {
@@ -119,7 +131,7 @@ class AuthController {
                         let decodedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: AnyObject]
                         let authToken = decodedData["token"] as! String
                         
-                        // Update or create a user and set the current authenticated user
+                        // Update or create an existing user and set the current authenticated user
                         
                         // If a local authorised user exists then update their details
                         if let returningUser = self.fetchUser(withUserCredential: userCredential) {
@@ -133,18 +145,24 @@ class AuthController {
                             self.coreData.save(context: self.coreData.persistentContainer.viewContext)
                             
                             self.networkController.authenticatedUser = returningUser
+                            
+                            completion(.returningUser)
                         }
                         
-                        // Else create a new user and set their token
+                        // Else remove all users and create a new user setting their token
                         else {
+                            print("Logged in via network, new user")
+                            self.removeUsers()
+                            
                             let newUser = self.createUser(userCredential: userCredential)
                             newUser.authToken = authToken
                             
+                            self.coreData.save(context: self.coreData.persistentContainer.viewContext)
+                            
                             self.networkController.authenticatedUser = newUser
                             
+                            completion(.newLogin)
                         }
-                        
-                        completion(.success(nil))
                     }
                         
                     catch {
@@ -156,7 +174,16 @@ class AuthController {
                 }
             }
         }
+    }
+    
+    private func removeUsers() {
+        let users = fetchUsers()
         
+        for user in users {
+            coreData.persistentContainer.viewContext.delete(user)
+        }
+        
+        coreData.save(context: coreData.persistentContainer.viewContext)
     }
     
     private func fetchUser(withUserCredential credential: UserCredential) -> UserMO? {
@@ -177,8 +204,18 @@ class AuthController {
             fatalError("Error fetching user")
         }
     }
-    
-    
+
+    private func fetchUsers() -> [UserMO] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserMO")
+        
+        do {
+            return try coreData.persistentContainer.viewContext.fetch(request) as! [UserMO]
+        }
+            
+        catch {
+            fatalError("Error fetching users")
+        }
+    }
     
     // Login
         // Does the employeeNumber already exists?

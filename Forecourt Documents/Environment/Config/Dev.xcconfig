@@ -7,6 +7,6 @@
 
 ENVIRONMENT = DEV
 
-PULSE_URL = document-storage-dev.moto-hospitality.co.uk
+DOCUMENT_STORAGE_URL = document-storage-dev.moto-hospitality.co.uk
 
-S3_URL = s3.dev.moto-security.int
+S3_URL = s3-dev.moto-hospitality.co.uk

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C813815526C1738800581C84 /* DirectoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813815426C1738800581C84 /* DirectoryController.swift */; };
 		C825A3CC26A98ADF00B2C4E5 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */; };
 		C825A3CE26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CD26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift */; };
 		C825A3D026A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CF26A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift */; };
@@ -16,10 +17,8 @@
 		C86D688126A190AD004A0D48 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D688026A190AD004A0D48 /* CoreData.swift */; };
 		C86D688426A1935B004A0D48 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C86D688226A1935B004A0D48 /* Data.xcdatamodeld */; };
 		C86D688B26A1A391004A0D48 /* DirectoryMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D688526A1A391004A0D48 /* DirectoryMO+CoreDataClass.swift */; };
-		C86D688C26A1A391004A0D48 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D688626A1A391004A0D48 /* DirectoryMO+CoreDataProperties.swift */; };
 		C86D688D26A1A391004A0D48 /* UserMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D688726A1A391004A0D48 /* UserMO+CoreDataClass.swift */; };
 		C86D688F26A1A391004A0D48 /* DocumentMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D688926A1A391004A0D48 /* DocumentMO+CoreDataClass.swift */; };
-		C86D689026A1A391004A0D48 /* DocumentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D688A26A1A391004A0D48 /* DocumentMO+CoreDataProperties.swift */; };
 		C86D689226A1A41A004A0D48 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D689126A1A41A004A0D48 /* AuthController.swift */; };
 		C86D689426A1A4D3004A0D48 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D689326A1A4D3004A0D48 /* NetworkController.swift */; };
 		C86D689626A1A512004A0D48 /* NetworkController+Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D689526A1A512004A0D48 /* NetworkController+Responses.swift */; };
@@ -47,6 +46,8 @@
 		C8AB313F26BADF8C00D082CA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313E26BADF8C00D082CA /* String+Extension.swift */; };
 		C8AB314226BAE3FB00D082CA /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB314126BAE3FB00D082CA /* UserCredential.swift */; };
 		C8AB314526BAE73A00D082CA /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB314426BAE73A00D082CA /* Spinner.swift */; };
+		C8B6E1CD26C2C40800F94240 /* DocumentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */; };
+		C8B6E1CF26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B6E1CB26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift */; };
 		C8C84B0726A02A9C001EEE53 /* DocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C84B0626A02A9C001EEE53 /* DocumentVC.swift */; };
 		C8C84B0A26A02BF2001EEE53 /* Test PDF 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C8C84B0926A02BF2001EEE53 /* Test PDF 1.pdf */; };
 		C8C84B0C26A0478D001EEE53 /* DirectoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C84B0B26A0478D001EEE53 /* DirectoryCell.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C813815426C1738800581C84 /* DirectoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryController.swift; sourceTree = "<group>"; };
 		C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		C825A3CD26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigLoginVC+Alerts.swift"; sourceTree = "<group>"; };
 		C825A3CF26A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigLoginVC+TextField.swift"; sourceTree = "<group>"; };
@@ -80,10 +82,8 @@
 		C86D688026A190AD004A0D48 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		C86D688326A1935B004A0D48 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		C86D688526A1A391004A0D48 /* DirectoryMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C86D688626A1A391004A0D48 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C86D688726A1A391004A0D48 /* UserMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C86D688926A1A391004A0D48 /* DocumentMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C86D688A26A1A391004A0D48 /* DocumentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C86D689126A1A41A004A0D48 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		C86D689326A1A4D3004A0D48 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		C86D689526A1A512004A0D48 /* NetworkController+Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkController+Responses.swift"; sourceTree = "<group>"; };
@@ -120,6 +120,8 @@
 		C8AB313E26BADF8C00D082CA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C8AB314126BAE3FB00D082CA /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		C8AB314426BAE73A00D082CA /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8B6E1CB26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8C84B0626A02A9C001EEE53 /* DocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentVC.swift; sourceTree = "<group>"; };
 		C8C84B0926A02BF2001EEE53 /* Test PDF 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Test PDF 1.pdf"; sourceTree = "<group>"; };
 		C8C84B0B26A0478D001EEE53 /* DirectoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryCell.swift; sourceTree = "<group>"; };
@@ -258,8 +260,8 @@
 		C8A88D64269C8F0100F4960B /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				C86D688626A1A391004A0D48 /* DirectoryMO+CoreDataProperties.swift */,
-				C86D688A26A1A391004A0D48 /* DocumentMO+CoreDataProperties.swift */,
+				C8B6E1CB26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift */,
+				C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */,
 				C8C9D63026A857B9002D9B91 /* HostMO+CoreDataProperties.swift */,
 				C89DDF7526BD4F1C00DB4B09 /* UserMO+CoreDataProperties.swift */,
 			);
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				C86D689126A1A41A004A0D48 /* AuthController.swift */,
+				C813815426C1738800581C84 /* DirectoryController.swift */,
 				C8A88D70269C97A100F4960B /* StateController.swift */,
 				C86D689326A1A4D3004A0D48 /* NetworkController.swift */,
 				C86D689526A1A512004A0D48 /* NetworkController+Responses.swift */,
@@ -559,7 +562,6 @@
 			files = (
 				C86D689426A1A4D3004A0D48 /* NetworkController.swift in Sources */,
 				C8C9D63A26A860D3002D9B91 /* EnvironmentHandler.swift in Sources */,
-				C86D689026A1A391004A0D48 /* DocumentMO+CoreDataProperties.swift in Sources */,
 				C8C8DF4926A4E390008363FD /* LoginVC+TextField.swift in Sources */,
 				C8C9D64926A8737B002D9B91 /* EditConfigVC.swift in Sources */,
 				C86D689826A1D1F4004A0D48 /* LoginVC.swift in Sources */,
@@ -570,6 +572,7 @@
 				C8AB313B26BADEE400D082CA /* Hash.swift in Sources */,
 				C86D688126A190AD004A0D48 /* CoreData.swift in Sources */,
 				C8A88D4D269C7D1E00F4960B /* AppDelegate.swift in Sources */,
+				C8B6E1CD26C2C40800F94240 /* DocumentMO+CoreDataProperties.swift in Sources */,
 				C86D689B26A1E40A004A0D48 /* PlainTextField.swift in Sources */,
 				C825A3CE26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift in Sources */,
 				C8C84B0726A02A9C001EEE53 /* DocumentVC.swift in Sources */,
@@ -582,6 +585,7 @@
 				C88DE8E726AACD1600E6E17D /* AboutVC+SimplePing.swift in Sources */,
 				C85862D126B9532A007EE929 /* UIRefreshControl+Extension.swift in Sources */,
 				C85862D526B95372007EE929 /* ConfigVC+SimplePing.swift in Sources */,
+				C813815526C1738800581C84 /* DirectoryController.swift in Sources */,
 				C8C9D62626A82B41002D9B91 /* HasMenuButton.swift in Sources */,
 				C8A88D79269C9D7700F4960B /* BackButton.swift in Sources */,
 				C8C9D62A26A84E26002D9B91 /* LoginVC+Alerts.swift in Sources */,
@@ -596,7 +600,6 @@
 				C8AB313926BADED300D082CA /* DailyPassword.swift in Sources */,
 				C8C9D64126A86C6E002D9B91 /* ConfigVC.swift in Sources */,
 				C8EF3114269D965C00429A0C /* DirectoryVC+Table.swift in Sources */,
-				C86D688C26A1A391004A0D48 /* DirectoryMO+CoreDataProperties.swift in Sources */,
 				C8C9D63C26A8632B002D9B91 /* AboutVC+Table.swift in Sources */,
 				C8A88D77269C9D5500F4960B /* HasBackButton.swift in Sources */,
 				C8D506F8269F9732004B6252 /* DirectoryVC+Search.swift in Sources */,
@@ -614,6 +617,7 @@
 				C86D689226A1A41A004A0D48 /* AuthController.swift in Sources */,
 				C86D688D26A1A391004A0D48 /* UserMO+CoreDataClass.swift in Sources */,
 				C8AA76B426AAE8EA00FE9527 /* HostCell.swift in Sources */,
+				C8B6E1CF26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

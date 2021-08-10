@@ -9,6 +9,10 @@ import UIKit
 import PDFKit
 
 class DocumentVC: UIViewController, HasBackButton, HasMenuButton {
+    func logoutTapped() {
+        print("Doc Logout")
+    }
+    
    
     //# MARK: - Data
     var stateController: StateController!
@@ -39,7 +43,11 @@ class DocumentVC: UIViewController, HasBackButton, HasMenuButton {
         
         guard let path = Bundle.main.url(forResource: "Test PDF 1", withExtension: "pdf") else { return }
         
-        if let document = PDFDocument(url: path) {
+//        if let document = PDFDocument(url: path) {
+//            pdfView.document = document
+//        }
+        
+        if let document = PDFDocument(data: stateController.pdfData!) {
             pdfView.document = document
         }
     }

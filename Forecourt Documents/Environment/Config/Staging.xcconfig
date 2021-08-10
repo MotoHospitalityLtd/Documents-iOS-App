@@ -7,6 +7,6 @@
 
 ENVIRONMENT = STAGING
 
-PULSE_URL = document-storage-stage.moto-hospitality.co.uk
+DOCUMENT_STORAGE_URL = document-storage-stage.moto-hospitality.co.uk
 
 S3_URL = s3.stage.moto-security.int

@@ -9,21 +9,21 @@ import Foundation
 
 class StateController {
     
+    var pdfData: Data?
+    
     //# MARK: - Data:
     var coreData: CoreData = CoreData()
     
     //# MARK: - Controllers:
     let networkController: NetworkController
     let authController: AuthController
+    let directoryController: DirectoryController
  
     
     var fakeDataProvider = FakeDataProvider()
 //    var rootDirectories: [Directory]
         // Training
         // Manuals
-    
-    
-    
     
     //# MARK: - Controllers:
     var directoryPath: [Int] = []
@@ -37,6 +37,7 @@ class StateController {
     init() {
         self.networkController = NetworkController(coreData: coreData)
         self.authController = AuthController(coreData: coreData, networkController: networkController)
+        self.directoryController = DirectoryController(coreData: coreData, networkController: networkController)
 
         self.rootDirectory = fakeDataProvider.testCreate()
         self.currentDirectory = rootDirectory
