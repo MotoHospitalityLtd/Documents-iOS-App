@@ -18,6 +18,7 @@ class StateController {
     let networkController: NetworkController
     let authController: AuthController
     let directoryController: DirectoryController
+    let documentController: DocumentController
  
     
     var fakeDataProvider = FakeDataProvider()
@@ -38,6 +39,7 @@ class StateController {
         self.networkController = NetworkController(coreData: coreData)
         self.authController = AuthController(coreData: coreData, networkController: networkController)
         self.directoryController = DirectoryController(coreData: coreData, networkController: networkController)
+        self.documentController = DocumentController(coreData: coreData, networkController: networkController)
 
         self.rootDirectory = fakeDataProvider.testCreate()
         self.currentDirectory = rootDirectory
@@ -57,6 +59,13 @@ class StateController {
 //        for doc in allDocuments {
 //            print(doc.title)
 //        }
+    }
+    
+    internal func clearData() {
+        directoryController.removeAllDirectories()
+        documentController.removeAllDocuments()
+        
+        coreData.save(context: coreData.persistentContainer.viewContext)
     }
     
     func setCurrentDirectory() {

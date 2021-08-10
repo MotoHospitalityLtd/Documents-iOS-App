@@ -103,8 +103,8 @@ class LoginVC: UIViewController, HasMenuButton {
                     directoryVC.stateController = self.stateController
                     self.stateController.currentDirectory = self.stateController.rootDirectory
                     
+                    self.stateController.clearData()
                     
-            
                     self.downloadDirectories()
                     
                     

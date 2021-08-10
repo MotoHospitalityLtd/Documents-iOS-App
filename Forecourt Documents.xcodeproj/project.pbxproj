@@ -11,6 +11,7 @@
 		C825A3CC26A98ADF00B2C4E5 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */; };
 		C825A3CE26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CD26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift */; };
 		C825A3D026A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CF26A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift */; };
+		C845176726C3203200DAD20D /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845176626C3203200DAD20D /* DocumentController.swift */; };
 		C85862D126B9532A007EE929 /* UIRefreshControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85862D026B9532A007EE929 /* UIRefreshControl+Extension.swift */; };
 		C85862D326B95361007EE929 /* ConfigVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85862D226B95361007EE929 /* ConfigVC+Alerts.swift */; };
 		C85862D526B95372007EE929 /* ConfigVC+SimplePing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85862D426B95372007EE929 /* ConfigVC+SimplePing.swift */; };
@@ -47,7 +48,7 @@
 		C8AB314226BAE3FB00D082CA /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB314126BAE3FB00D082CA /* UserCredential.swift */; };
 		C8AB314526BAE73A00D082CA /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB314426BAE73A00D082CA /* Spinner.swift */; };
 		C8B6E1CD26C2C40800F94240 /* DocumentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */; };
-		C8B6E1CF26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B6E1CB26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift */; };
+		C8B6E1D726C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B6E1D526C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift */; };
 		C8C84B0726A02A9C001EEE53 /* DocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C84B0626A02A9C001EEE53 /* DocumentVC.swift */; };
 		C8C84B0A26A02BF2001EEE53 /* Test PDF 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C8C84B0926A02BF2001EEE53 /* Test PDF 1.pdf */; };
 		C8C84B0C26A0478D001EEE53 /* DirectoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C84B0B26A0478D001EEE53 /* DirectoryCell.swift */; };
@@ -76,6 +77,7 @@
 		C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		C825A3CD26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigLoginVC+Alerts.swift"; sourceTree = "<group>"; };
 		C825A3CF26A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigLoginVC+TextField.swift"; sourceTree = "<group>"; };
+		C845176626C3203200DAD20D /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		C85862D026B9532A007EE929 /* UIRefreshControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extension.swift"; sourceTree = "<group>"; };
 		C85862D226B95361007EE929 /* ConfigVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigVC+Alerts.swift"; sourceTree = "<group>"; };
 		C85862D426B95372007EE929 /* ConfigVC+SimplePing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigVC+SimplePing.swift"; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 		C8AB314126BAE3FB00D082CA /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		C8AB314426BAE73A00D082CA /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C8B6E1CB26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8B6E1D526C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8C84B0626A02A9C001EEE53 /* DocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentVC.swift; sourceTree = "<group>"; };
 		C8C84B0926A02BF2001EEE53 /* Test PDF 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Test PDF 1.pdf"; sourceTree = "<group>"; };
 		C8C84B0B26A0478D001EEE53 /* DirectoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryCell.swift; sourceTree = "<group>"; };
@@ -260,7 +262,7 @@
 		C8A88D64269C8F0100F4960B /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				C8B6E1CB26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift */,
+				C8B6E1D526C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift */,
 				C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */,
 				C8C9D63026A857B9002D9B91 /* HostMO+CoreDataProperties.swift */,
 				C89DDF7526BD4F1C00DB4B09 /* UserMO+CoreDataProperties.swift */,
@@ -327,6 +329,7 @@
 			children = (
 				C86D689126A1A41A004A0D48 /* AuthController.swift */,
 				C813815426C1738800581C84 /* DirectoryController.swift */,
+				C845176626C3203200DAD20D /* DocumentController.swift */,
 				C8A88D70269C97A100F4960B /* StateController.swift */,
 				C86D689326A1A4D3004A0D48 /* NetworkController.swift */,
 				C86D689526A1A512004A0D48 /* NetworkController+Responses.swift */,
@@ -576,6 +579,7 @@
 				C86D689B26A1E40A004A0D48 /* PlainTextField.swift in Sources */,
 				C825A3CE26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift in Sources */,
 				C8C84B0726A02A9C001EEE53 /* DocumentVC.swift in Sources */,
+				C8B6E1D726C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */,
 				C8A88D71269C97A100F4960B /* StateController.swift in Sources */,
 				C825A3CC26A98ADF00B2C4E5 /* UIDevice+Extension.swift in Sources */,
 				C86D688426A1935B004A0D48 /* Data.xcdatamodeld in Sources */,
@@ -607,6 +611,7 @@
 				C825A3D026A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift in Sources */,
 				C8C9D64526A86CB4002D9B91 /* ConfigLoginVC.swift in Sources */,
 				C86D688F26A1A391004A0D48 /* DocumentMO+CoreDataClass.swift in Sources */,
+				C845176726C3203200DAD20D /* DocumentController.swift in Sources */,
 				C8EF3110269D95AE00429A0C /* MenuVC.swift in Sources */,
 				C8A88D75269C9D3900F4960B /* UITableView+Extension.swift in Sources */,
 				C8AB313F26BADF8C00D082CA /* String+Extension.swift in Sources */,
@@ -617,7 +622,6 @@
 				C86D689226A1A41A004A0D48 /* AuthController.swift in Sources */,
 				C86D688D26A1A391004A0D48 /* UserMO+CoreDataClass.swift in Sources */,
 				C8AA76B426AAE8EA00FE9527 /* HostCell.swift in Sources */,
-				C8B6E1CF26C2C40800F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
