@@ -8,10 +8,6 @@
 import UIKit
 
 class LoginVC: UIViewController, HasMenuButton {
-    func logoutTapped() {
-        
-    }
-    
     
     //# MARK: - Data
     var stateController: StateController!
@@ -28,11 +24,6 @@ class LoginVC: UIViewController, HasMenuButton {
     //# MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("VIEWS:", navigationController!.viewControllers.count)
-        for view in navigationController!.viewControllers {
-            print(view)
-        }
         
         uiSetup()
     }
@@ -72,20 +63,18 @@ class LoginVC: UIViewController, HasMenuButton {
             return
         }
         
-        
         // Create a user credential to pass around
         let userCredential = UserCredential(employeeNumber: employeeNumber, dateOfBirth: dateOfBirth)
     
         loginAttempt(withUserCredential: userCredential)
-        
-        
-        
-        
-        // On a successful login, swapout the loginNC with the directoryNC
-        // More handling for later when login screen appears over the top of an active navController and can just pop from the stack if the user is the same as the last logged in user.
     }
     
-    func loginAttempt(withUserCredential userCredential: UserCredential) {
+    func menuTapped(sender: UIBarButtonItem) {
+        openMenu(sender: sender, withStateController: stateController)
+    }
+    
+    //# MARK: - Network Calls
+    private func loginAttempt(withUserCredential userCredential: UserCredential) {
         let spinner = Spinner()
         self.view.addSubview(spinner)
         
@@ -98,11 +87,11 @@ class LoginVC: UIViewController, HasMenuButton {
             case .newLogin:
                 print("New Login")
                 
+//                self.stateController.directoryController.directoryPath = []
+            
                 self.stateController.clearData()
-                self.downloadDirectories()
+                self.downloadData()
                 
-               
-
             case .returningUser: // Was the last user that logged in
                 print("Returning User")
                 
@@ -112,12 +101,7 @@ class LoginVC: UIViewController, HasMenuButton {
                 }
 
                 else {
-                    if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
-                        
-                        directoryVC.stateController = self.stateController
-                        UIApplication.shared.windows.first?.rootViewController = directoryNC
-                        UIApplication.shared.windows.first?.makeKeyAndVisible()
-                    }
+                    self.instantiateDirectoryNC()
                 }
                 
             case .error(let httpError):
@@ -142,54 +126,50 @@ class LoginVC: UIViewController, HasMenuButton {
         }
     }
     
-    func downloadDirectories() {
-
-//        stateController.directoryController.getDocument()
-
-//
-//        let url = "https://s3-dev.moto-hospitality.co.uk/dev-document-storage/Wi3hO3Nkg8D0agK8RfpNvejcBfhmrs8SeHRl66fC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minio%2F20210810%2F%2Fs3%2Faws4_request&X-Amz-Date=20210810T085003Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1800&X-Amz-Signature=41664bdb94a8813c9151d1a1e225ca85c379d4111ff122cb47390067dd7be96d"
-//
-//
-//        stateController.networkController.getImage(urlPath: url, data: nil) { response in
-//            switch response {
-//            case .success(let data):
-//                print("Successful Photo Data")
-//                print(data)
-//                self.stateController.pdfData = data
-//            case .error(let httpError):
-//                print("Error: \(httpError)")
-//            }
-//        }
-
+    private func downloadData() {
+        
+        let spinner = Spinner()
+        self.view.addSubview(spinner)
+        
         stateController.directoryController.downloadDirectories { response in
             switch response {
             case .success(_):
                 print("Download directories success")
                 
-                
-                if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+                self.stateController.documentController.downloadDocuments { response in
+                    switch response {
+                    case .success(_ ):
+                        print("SUCCESSFULL DOWNLOAD TEST")
+                        
+                        spinner.close()
                     
-                    directoryVC.stateController = self.stateController
-                    self.stateController.directoryController.currentDirectory = self.stateController.directoryController.rootDirectory
-                    
-                    
-                    self.stateController.documentController.loadAllDocuments()
-                  
-                    
-                    UIApplication.shared.windows.first?.rootViewController = directoryNC
-                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                        self.stateController.directoryController.currentDirectory = self.stateController.directoryController.rootDirectory
+                        self.stateController.documentController.loadAllDocuments()
+                          
+                        self.instantiateDirectoryNC()
+                        
+                        
+                    case .error(let httpError):
+                        spinner.close()
+                        print("ERROR DOWNLOADING DIRECTORIES AND PDF DATA")
+                    }
                 }
-                
-                
+
             case .error(let httpError):
+                spinner.close()
                 print("Download directories error")
             }
         }
-
     }
     
-    func menuTapped(sender: UIBarButtonItem) {
-        openMenu(sender: sender, withStateController: stateController)
+    //# MARK: - Navigation
+    private func instantiateDirectoryNC() {
+        if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+            
+            directoryVC.stateController = self.stateController
+            UIApplication.shared.windows.first?.rootViewController = directoryNC
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
     }
     
     //# MARK: - Orientation Changes

@@ -9,11 +9,7 @@ import UIKit
 import PDFKit
 
 class DocumentVC: UIViewController, HasBackButton, HasMenuButton {
-    func logoutTapped() {
-        print("Doc Logout")
-    }
-    
-   
+ 
     //# MARK: - Data
     var stateController: StateController!
     
@@ -41,15 +37,22 @@ class DocumentVC: UIViewController, HasBackButton, HasMenuButton {
         pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        guard let path = Bundle.main.url(forResource: "Test PDF 1", withExtension: "pdf") else { return }
+//        guard let path = Bundle.main.url(forResource: "Test PDF 1", withExtension: "pdf") else { return }
         
 //        if let document = PDFDocument(url: path) {
+
 //            pdfView.document = document
 //        }
         
-        if let document = PDFDocument(data: stateController.pdfData!) {
+        
+        if let document = PDFDocument(data: stateController.documentController.loadCurrentDocument()) {
             pdfView.document = document
         }
+        
+        
+//        if let document = PDFDocument(data: stateController.pdfData!) {
+//            pdfView.document = document
+//        }
     }
     
     //# MARK: - Button Actions

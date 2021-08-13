@@ -10,7 +10,6 @@ import UIKit
 @objc protocol HasMenuButton where Self: UIViewController {
     var navigationItem: UINavigationItem { get }
     @objc func menuTapped(sender: UIBarButtonItem)
-    @objc func logoutTapped()
     func unwindFromAboutVC(segue: UIStoryboardSegue)
 }
 
@@ -65,14 +64,15 @@ extension HasMenuButton {
     }
     
     private func logout(stateController: StateController) {
-        
-        if let loginNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginNC") as? UINavigationController, let loginVC = loginNC.viewControllers[0] as? LoginVC {
+        if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+//        if let loginNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginNC") as? UINavigationController, let loginVC = loginNC.viewControllers[0] as? LoginVC {
             
-            stateController.networkController.authenticatedUser = nil
             loginVC.stateController = stateController
             
-            UIApplication.shared.windows.first?.rootViewController = loginNC
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+            navigationController?.pushViewController(loginVC, animated: true)
+//            UIApplication.shared.windows.first?.rootViewController = loginNC
+//            UIApplication.shared.windows.first?.makeKeyAndVisible()
         }
     }
 }

@@ -28,9 +28,9 @@ public class DocumentMO: NSManagedObject {
             
             documents.append(newDocument)
             
-            print("File")
-            print(document)
-            print("------------")
+//            print("File")
+//            print(document)
+//            print("------------")
         }
         
         return NSSet(array: documents)

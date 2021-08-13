@@ -60,9 +60,9 @@ class StateController {
     
     internal func clearData() {
         directoryController.removeAllDirectories()
-        documentController.removeAllDocuments()
         
-        coreData.save(context: coreData.persistentContainer.viewContext)
+        documentController.removeAllDocuments()
+        self.coreData.save(context: self.coreData.persistentContainer.viewContext)
     }
     
 //    func setCurrentDirectory() {

@@ -44,21 +44,11 @@ class DirectoryController {
                         
                         let directoryData = decodedData["data"] as! [[String: AnyObject]]
                         
-//                        self.createDirectories(fromJson: directoryData)
-                        
-                        
                         self.rootDirectory = DirectoryMO.createRootDirectory(fromJSon: directoryData, withContext: self.coreData.persistentContainer.viewContext)
                         self.currentDirectory = self.rootDirectory
-                        
-                        print("AFTER ADDING")
-//                        dump(self.rootDirectory)
-                        
+   
                         self.coreData.save(context: self.coreData.persistentContainer.viewContext)
-                        
-//                        print("DATA")
-//                        print(directoryData)
-                        
-                        
+
                         completion(.success(nil))
                     }
                         
@@ -78,6 +68,8 @@ class DirectoryController {
             print("Removed directory")
             coreData.persistentContainer.viewContext.delete(directory)
         }
+        
+        directoryPath = []
     }
     
     private func fetchAllDirectories() -> [DirectoryMO] {
@@ -137,96 +129,4 @@ class DirectoryController {
     internal func getSubDirectory(ofDirectory directory: DirectoryMO, withIndex index: Int) -> DirectoryMO {
         return directory.visibleItems[index] as! DirectoryMO
     }
-    
-//    private func createDirectories(fromJson jsonDirectories: [[String: AnyObject]]) {
-//        var rootDirectories: [DirectoryMO] = []
-//
-//
-//        for jsonDirectory in jsonDirectories {
-//
-//
-//            print("JsonDirectory")
-//            print(jsonDirectory)
-//
-//            let rootDirectory = createDirectory(fromJson: jsonDirectory)
-//            rootDirectories.append(rootDirectory)
-//
-//
-////            print("Directory")
-////            print(jsonDirectory)
-////            print("---------------")
-//        }
-//
-//        print("Root Directory Count")
-//        print(rootDirectories.count)
-//
-//        // Create a diretory
-//        // if directory has subDirectories, create them.
-//
-//    }
-//
-//    private func createDirectory(fromJson jsonDirectory: [String: AnyObject]) -> DirectoryMO {
-//        let newDirectory = DirectoryMO(context: coreData.persistentContainer.viewContext)
-//
-//
-//        newDirectory.id = jsonDirectory["id"] as! Int64
-//        newDirectory.name = jsonDirectory["title"] as? String ?? "Untitled"
-//
-//        if let jsonDocuments = jsonDirectory["files"] as? [[String: AnyObject]] {
-//
-//            newDirectory.addToDocuments(createDocuments(fromJson: jsonDocuments))
-////            let docs = createDocuments(fromJson: jsonDocuments)
-//
-//            print("DOC COUNT")
-//            print(newDirectory.documents!.count)
-//
-//        }
-//
-//        if let jsonSubDirectories = jsonDirectory["children"] as? [[String: AnyObject]] {
-//            var subDirectories: [DirectoryMO] = []
-//
-//            print("SubDirectory Count")
-//            print(subDirectories.count)
-//
-//            for jsonSubDirectory in jsonSubDirectories {
-//                print("JSON SUB")
-//                print(jsonSubDirectory)
-//                let subDirectory = createDirectory(fromJson: jsonSubDirectory)
-//                subDirectories.append(subDirectory)
-//            }
-//
-//            newDirectory.addToSubDirectories(NSSet(array: subDirectories))
-//        }
-//
-////        newDirectory.subDirectories = subDirectories
-//
-//        return newDirectory
-//
-//
-//    }
-//
-//    private func createDocuments(fromJson jsonDocuments: [[String: AnyObject]]) -> NSSet  {
-//        var documents: [DocumentMO] = []
-//
-//        print("CREATE DOCUMENTS")
-//        for document in jsonDocuments {
-//
-//            let newDocument = DocumentMO(context: coreData.persistentContainer.viewContext)
-//
-//            newDocument.id = document["id"] as! Int64
-//            newDocument.title = document["title"] as? String ?? "Untitled"
-//            newDocument.url = document["url"] as? String ?? "No URL"
-//
-////            newDocument.locationOnDisc
-//
-//
-//            documents.append(newDocument)
-//
-//            print("File")
-//            print(document)
-//            print("------------")
-//        }
-//
-//        return NSSet(array: documents)
-//    }
 }

@@ -3,12 +3,15 @@
     <entity name="DirectoryMO" representedClassName="DirectoryMO" syncable="YES">
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="documents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DocumentMO" inverseName="directory" inverseEntity="DocumentMO"/>
         <relationship name="parentDirectory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DirectoryMO" inverseName="subDirectories" inverseEntity="DirectoryMO"/>
         <relationship name="subDirectories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DirectoryMO" inverseName="parentDirectory" inverseEntity="DirectoryMO"/>
     </entity>
     <entity name="DocumentMO" representedClassName="DocumentMO" syncable="YES">
+        <attribute name="filePath" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="url" attributeType="String"/>
         <relationship name="directory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DirectoryMO" inverseName="documents" inverseEntity="DirectoryMO"/>
@@ -24,8 +27,8 @@
         <attribute name="expiry" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="DirectoryMO" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="DocumentMO" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="DirectoryMO" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="DocumentMO" positionX="-54" positionY="-9" width="128" height="119"/>
         <element name="HostMO" positionX="-54" positionY="36" width="128" height="59"/>
         <element name="UserMO" positionX="-36" positionY="9" width="128" height="89"/>
     </elements>

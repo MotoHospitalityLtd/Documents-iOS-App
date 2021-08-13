@@ -34,6 +34,8 @@ public class DirectoryMO: NSManagedObject {
     
         var rootDirectories: [DirectoryMO] = []
         
+        var order: Int64 = 1
+        
         for jsonDirectory in jsonDirectories {
             
             
@@ -51,6 +53,7 @@ public class DirectoryMO: NSManagedObject {
         
         let newRootDirectory = DirectoryMO(context: context)
         newRootDirectory.id = 0
+        newRootDirectory.order = 0
         newRootDirectory.name = "Root Directory"
         newRootDirectory.addToSubDirectories(NSSet(array: rootDirectories))
         
@@ -96,8 +99,8 @@ public class DirectoryMO: NSManagedObject {
             print(subDirectories.count)
             
             for jsonSubDirectory in jsonSubDirectories {
-                print("JSON SUB")
-                print(jsonSubDirectory)
+//                print("JSON SUB")
+//                print(jsonSubDirectory)
                 let subDirectory = createDirectory(fromJson: jsonSubDirectory, withContext: context)
                 subDirectories.append(subDirectory)
             }

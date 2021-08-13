@@ -11,6 +11,7 @@
 		C825A3CC26A98ADF00B2C4E5 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */; };
 		C825A3CE26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CD26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift */; };
 		C825A3D026A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CF26A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift */; };
+		C82C3D7026C51DF400623348 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82C3D6F26C51DF400623348 /* FileController.swift */; };
 		C845176726C3203200DAD20D /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845176626C3203200DAD20D /* DocumentController.swift */; };
 		C85862D126B9532A007EE929 /* UIRefreshControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85862D026B9532A007EE929 /* UIRefreshControl+Extension.swift */; };
 		C85862D326B95361007EE929 /* ConfigVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85862D226B95361007EE929 /* ConfigVC+Alerts.swift */; };
@@ -39,6 +40,8 @@
 		C8A88D79269C9D7700F4960B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A88D78269C9D7700F4960B /* BackButton.swift */; };
 		C8AA76B426AAE8EA00FE9527 /* HostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AA76B326AAE8EA00FE9527 /* HostCell.swift */; };
 		C8AA76B626AAE94800FE9527 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AA76B526AAE94800FE9527 /* UIColor+Extension.swift */; };
+		C8AAA88126C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAA87D26C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift */; };
+		C8AAA88326C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAA87F26C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift */; };
 		C8AB313426BAA0F300D082CA /* EditConfigVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313326BAA0F300D082CA /* EditConfigVC+Alerts.swift */; };
 		C8AB313726BADEBE00D082CA /* Cryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313626BADEBE00D082CA /* Cryption.swift */; };
 		C8AB313926BADED300D082CA /* DailyPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313826BADED300D082CA /* DailyPassword.swift */; };
@@ -47,8 +50,6 @@
 		C8AB313F26BADF8C00D082CA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313E26BADF8C00D082CA /* String+Extension.swift */; };
 		C8AB314226BAE3FB00D082CA /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB314126BAE3FB00D082CA /* UserCredential.swift */; };
 		C8AB314526BAE73A00D082CA /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB314426BAE73A00D082CA /* Spinner.swift */; };
-		C8B6E1CD26C2C40800F94240 /* DocumentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */; };
-		C8B6E1D726C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B6E1D526C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift */; };
 		C8C84B0726A02A9C001EEE53 /* DocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C84B0626A02A9C001EEE53 /* DocumentVC.swift */; };
 		C8C84B0A26A02BF2001EEE53 /* Test PDF 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C8C84B0926A02BF2001EEE53 /* Test PDF 1.pdf */; };
 		C8C84B0C26A0478D001EEE53 /* DirectoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C84B0B26A0478D001EEE53 /* DirectoryCell.swift */; };
@@ -77,6 +78,7 @@
 		C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		C825A3CD26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigLoginVC+Alerts.swift"; sourceTree = "<group>"; };
 		C825A3CF26A9B4B800B2C4E5 /* ConfigLoginVC+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigLoginVC+TextField.swift"; sourceTree = "<group>"; };
+		C82C3D6F26C51DF400623348 /* FileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
 		C845176626C3203200DAD20D /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		C85862D026B9532A007EE929 /* UIRefreshControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extension.swift"; sourceTree = "<group>"; };
 		C85862D226B95361007EE929 /* ConfigVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigVC+Alerts.swift"; sourceTree = "<group>"; };
@@ -114,6 +116,8 @@
 		C8AA76BB26AB0D6E00FE9527 /* Live.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Live.xcconfig; sourceTree = "<group>"; };
 		C8AA76BF26AB0EE800FE9527 /* Live.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Live.plist; sourceTree = "<group>"; };
 		C8AA76C026AB0EE800FE9527 /* Staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Staging.plist; sourceTree = "<group>"; };
+		C8AAA87D26C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8AAA87F26C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8AB313326BAA0F300D082CA /* EditConfigVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditConfigVC+Alerts.swift"; sourceTree = "<group>"; };
 		C8AB313626BADEBE00D082CA /* Cryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryption.swift; sourceTree = "<group>"; };
 		C8AB313826BADED300D082CA /* DailyPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPassword.swift; sourceTree = "<group>"; };
@@ -122,8 +126,6 @@
 		C8AB313E26BADF8C00D082CA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C8AB314126BAE3FB00D082CA /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
 		C8AB314426BAE73A00D082CA /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
-		C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C8B6E1D526C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8C84B0626A02A9C001EEE53 /* DocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentVC.swift; sourceTree = "<group>"; };
 		C8C84B0926A02BF2001EEE53 /* Test PDF 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Test PDF 1.pdf"; sourceTree = "<group>"; };
 		C8C84B0B26A0478D001EEE53 /* DirectoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryCell.swift; sourceTree = "<group>"; };
@@ -262,8 +264,8 @@
 		C8A88D64269C8F0100F4960B /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				C8B6E1D526C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift */,
-				C8B6E1C926C2C40800F94240 /* DocumentMO+CoreDataProperties.swift */,
+				C8AAA87D26C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift */,
+				C8AAA87F26C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift */,
 				C8C9D63026A857B9002D9B91 /* HostMO+CoreDataProperties.swift */,
 				C89DDF7526BD4F1C00DB4B09 /* UserMO+CoreDataProperties.swift */,
 			);
@@ -330,6 +332,7 @@
 				C86D689126A1A41A004A0D48 /* AuthController.swift */,
 				C813815426C1738800581C84 /* DirectoryController.swift */,
 				C845176626C3203200DAD20D /* DocumentController.swift */,
+				C82C3D6F26C51DF400623348 /* FileController.swift */,
 				C8A88D70269C97A100F4960B /* StateController.swift */,
 				C86D689326A1A4D3004A0D48 /* NetworkController.swift */,
 				C86D689526A1A512004A0D48 /* NetworkController+Responses.swift */,
@@ -566,6 +569,7 @@
 				C86D689426A1A4D3004A0D48 /* NetworkController.swift in Sources */,
 				C8C9D63A26A860D3002D9B91 /* EnvironmentHandler.swift in Sources */,
 				C8C8DF4926A4E390008363FD /* LoginVC+TextField.swift in Sources */,
+				C82C3D7026C51DF400623348 /* FileController.swift in Sources */,
 				C8C9D64926A8737B002D9B91 /* EditConfigVC.swift in Sources */,
 				C86D689826A1D1F4004A0D48 /* LoginVC.swift in Sources */,
 				C8C84B0E26A04796001EEE53 /* DocumentCell.swift in Sources */,
@@ -575,11 +579,9 @@
 				C8AB313B26BADEE400D082CA /* Hash.swift in Sources */,
 				C86D688126A190AD004A0D48 /* CoreData.swift in Sources */,
 				C8A88D4D269C7D1E00F4960B /* AppDelegate.swift in Sources */,
-				C8B6E1CD26C2C40800F94240 /* DocumentMO+CoreDataProperties.swift in Sources */,
 				C86D689B26A1E40A004A0D48 /* PlainTextField.swift in Sources */,
 				C825A3CE26A996B800B2C4E5 /* ConfigLoginVC+Alerts.swift in Sources */,
 				C8C84B0726A02A9C001EEE53 /* DocumentVC.swift in Sources */,
-				C8B6E1D726C2D7BF00F94240 /* DirectoryMO+CoreDataProperties.swift in Sources */,
 				C8A88D71269C97A100F4960B /* StateController.swift in Sources */,
 				C825A3CC26A98ADF00B2C4E5 /* UIDevice+Extension.swift in Sources */,
 				C86D688426A1935B004A0D48 /* Data.xcdatamodeld in Sources */,
@@ -588,6 +590,7 @@
 				C8C9D63126A857B9002D9B91 /* HostMO+CoreDataClass.swift in Sources */,
 				C88DE8E726AACD1600E6E17D /* AboutVC+SimplePing.swift in Sources */,
 				C85862D126B9532A007EE929 /* UIRefreshControl+Extension.swift in Sources */,
+				C8AAA88326C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift in Sources */,
 				C85862D526B95372007EE929 /* ConfigVC+SimplePing.swift in Sources */,
 				C813815526C1738800581C84 /* DirectoryController.swift in Sources */,
 				C8C9D62626A82B41002D9B91 /* HasMenuButton.swift in Sources */,
@@ -622,6 +625,7 @@
 				C86D689226A1A41A004A0D48 /* AuthController.swift in Sources */,
 				C86D688D26A1A391004A0D48 /* UserMO+CoreDataClass.swift in Sources */,
 				C8AA76B426AAE8EA00FE9527 /* HostCell.swift in Sources */,
+				C8AAA88126C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

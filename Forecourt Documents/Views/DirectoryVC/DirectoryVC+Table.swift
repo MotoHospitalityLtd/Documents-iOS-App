@@ -89,6 +89,8 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
                 // Document Tapped
                 // Locate Document or Download it and set it somehwere in StateController
                 
+                stateController.documentController.currentDocument = stateController.directoryController.currentDirectory!.visibleItems[indexPath.row] as? DocumentMO
+                
                 performSegue(withIdentifier: "showDocumentVC", sender: self)
             }
             
@@ -97,6 +99,8 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
             // Document Tapped
             // Locate Document or Download it and set it somehwere in StateController
             print("Tapped a document cell with search criteria active")
+            
+            stateController.documentController.currentDocument = stateController.documentController.filteredDocuments[indexPath.row]
             
             performSegue(withIdentifier: "showDocumentVC", sender: self)
         }

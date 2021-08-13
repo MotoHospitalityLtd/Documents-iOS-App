@@ -8,10 +8,7 @@
 import UIKit
 
 class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
-    func logoutTapped() {
-        print("Directory Logout")
-    }
-    
+  
     //# MARK: - Data
     var stateController: StateController!
     
@@ -64,17 +61,18 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
        
     }
     
-//    func downloadDirectories() {
-//        print("Download Directories")
-//        stateController.directoryController.downloadDirectories { response in
-//            switch response {
-//            case .success(_):
-//                print("Download directories success")
-//            case .error(let httpError):
-//                print("Download directories error")
-//            }
-//        }
-//    }
+    func downloadDirectories() {
+        print("Download Directories on Directory VC")
+        stateController.directoryController.downloadDirectories { response in
+            switch response {
+            case .success(_):
+                print("Download directories success")
+                self.tableView.reloadData()
+            case .error(let httpError):
+                print("Download directories error")
+            }
+        }
+    }
     
     @IBAction func unwindFromDirectoryVC(segue: UIStoryboardSegue) {
         print("Did UnWind from DirectoryVC")
