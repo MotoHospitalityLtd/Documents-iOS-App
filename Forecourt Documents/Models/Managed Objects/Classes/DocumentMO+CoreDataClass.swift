@@ -15,19 +15,18 @@ public class DocumentMO: NSManagedObject {
         var documents: [DocumentMO] = []
         
         print("CREATE DOCUMENTS")
+        var order: Int64 = 1
         for document in jsonDocuments {
-            
             let newDocument = DocumentMO(context: context)
             
             newDocument.id = document["id"] as! Int64
+            newDocument.order = order
             newDocument.title = document["title"] as? String ?? "Untitled"
             newDocument.url = document["url"] as? String ?? "No URL"
             
-//            newDocument.locationOnDisc
-
-            
             documents.append(newDocument)
             
+            order += 1
 //            print("File")
 //            print(document)
 //            print("------------")
