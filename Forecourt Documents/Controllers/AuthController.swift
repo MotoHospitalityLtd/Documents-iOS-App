@@ -178,12 +178,14 @@ class AuthController {
         }
     }
     
-    private func removeUsers() {
+    internal func removeUsers() {
         let users = fetchUsers()
         
         for user in users {
             coreData.persistentContainer.viewContext.delete(user)
         }
+        
+        networkController.authenticatedUser = nil
         
         coreData.save(context: coreData.persistentContainer.viewContext)
     }

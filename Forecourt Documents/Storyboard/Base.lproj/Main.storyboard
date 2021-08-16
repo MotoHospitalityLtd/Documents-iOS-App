@@ -131,22 +131,22 @@
                                 <rect key="frame" x="0.0" y="50" width="810" height="1030"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" textLabel="GDy-jK-5p3" detailTextLabel="wlA-54-16N" style="IBUITableViewCellStyleValue1" id="aqd-nF-o2g">
-                                        <rect key="frame" x="0.0" y="49.5" width="810" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" textLabel="GDy-jK-5p3" detailTextLabel="wlA-54-16N" rowHeight="50" style="IBUITableViewCellStyleValue1" id="aqd-nF-o2g">
+                                        <rect key="frame" x="0.0" y="49.5" width="810" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aqd-nF-o2g" id="huI-Xi-qbf">
-                                            <rect key="frame" x="0.0" y="0.0" width="810" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GDy-jK-5p3">
-                                                    <rect key="frame" x="16" y="12" width="33" height="20.5"/>
+                                                    <rect key="frame" x="16" y="15" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wlA-54-16N">
-                                                    <rect key="frame" x="750" y="12" width="44" height="20.5"/>
+                                                    <rect key="frame" x="750" y="15" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,14 +156,30 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HostCell" id="Ysg-6K-23K" customClass="HostCell" customModule="Forecourt_Documents" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="93" width="810" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HostCell" rowHeight="50" id="Ysg-6K-23K" customClass="HostCell" customModule="Forecourt_Documents" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="99.5" width="810" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ysg-6K-23K" id="9rD-H4-S2d">
-                                            <rect key="frame" x="0.0" y="0.0" width="810" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zA0-YT-1EX">
+                                                    <rect key="frame" x="779" y="18" width="15" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="WBR-ns-pJx"/>
+                                                        <constraint firstAttribute="height" constant="15" id="gJL-K6-jC6"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zA0-YT-1EX" firstAttribute="trailing" secondItem="9rD-H4-S2d" secondAttribute="trailingMargin" id="7RB-bU-7tO"/>
+                                                <constraint firstItem="zA0-YT-1EX" firstAttribute="centerY" secondItem="9rD-H4-S2d" secondAttribute="centerY" id="Pke-uz-Fmt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="statusIcon" destination="zA0-YT-1EX" id="CNe-dt-Vqi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -197,7 +213,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDZ-Ct-M3l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="zFR-mH-Mc9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-47" y="-1362"/>
+            <point key="canvasLocation" x="-47.407407407407405" y="-1362.2222222222222"/>
         </scene>
         <!--Config LoginVC-->
         <scene sceneID="7de-lz-rdv">
@@ -659,6 +675,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="doc" catalog="system" width="115" height="128"/>
         <image name="doc.circle.fill" catalog="system" width="128" height="121"/>
         <image name="folder" catalog="system" width="128" height="97"/>

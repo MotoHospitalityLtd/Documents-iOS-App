@@ -42,6 +42,7 @@
 		C8AA76B626AAE94800FE9527 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AA76B526AAE94800FE9527 /* UIColor+Extension.swift */; };
 		C8AAA88126C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAA87D26C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift */; };
 		C8AAA88326C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAA87F26C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift */; };
+		C8AAA88526C6A67000E82E88 /* DirectoryVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAA88426C6A67000E82E88 /* DirectoryVC+Alerts.swift */; };
 		C8AB313426BAA0F300D082CA /* EditConfigVC+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313326BAA0F300D082CA /* EditConfigVC+Alerts.swift */; };
 		C8AB313726BADEBE00D082CA /* Cryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313626BADEBE00D082CA /* Cryption.swift */; };
 		C8AB313926BADED300D082CA /* DailyPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB313826BADED300D082CA /* DailyPassword.swift */; };
@@ -118,6 +119,7 @@
 		C8AA76C026AB0EE800FE9527 /* Staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Staging.plist; sourceTree = "<group>"; };
 		C8AAA87D26C66C8A00E82E88 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8AAA87F26C66C8A00E82E88 /* DocumentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8AAA88426C6A67000E82E88 /* DirectoryVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryVC+Alerts.swift"; sourceTree = "<group>"; };
 		C8AB313326BAA0F300D082CA /* EditConfigVC+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditConfigVC+Alerts.swift"; sourceTree = "<group>"; };
 		C8AB313626BADEBE00D082CA /* Cryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryption.swift; sourceTree = "<group>"; };
 		C8AB313826BADED300D082CA /* DailyPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPassword.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				C8EF3111269D964800429A0C /* DirectoryVC.swift */,
+				C8AAA88426C6A67000E82E88 /* DirectoryVC+Alerts.swift */,
 				C8EF3113269D965C00429A0C /* DirectoryVC+Table.swift */,
 				C8D506F7269F9732004B6252 /* DirectoryVC+Search.swift */,
 			);
@@ -617,6 +620,7 @@
 				C845176726C3203200DAD20D /* DocumentController.swift in Sources */,
 				C8EF3110269D95AE00429A0C /* MenuVC.swift in Sources */,
 				C8A88D75269C9D3900F4960B /* UITableView+Extension.swift in Sources */,
+				C8AAA88526C6A67000E82E88 /* DirectoryVC+Alerts.swift in Sources */,
 				C8AB313F26BADF8C00D082CA /* String+Extension.swift in Sources */,
 				C89DDF7926BD69EC00DB4B09 /* Data+Extension.swift in Sources */,
 				C8AB313726BADEBE00D082CA /* Cryption.swift in Sources */,

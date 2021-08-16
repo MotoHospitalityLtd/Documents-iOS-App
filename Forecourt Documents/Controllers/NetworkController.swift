@@ -57,8 +57,6 @@ class NetworkController {
                 config.httpAdditionalHeaders = ["Accept-Encoding": "gzip, deflate", "Accept": "application/json"]
             }
             
-            print("HEADERS")
-            print(config.httpAdditionalHeaders)
         case .s3:
             config.httpAdditionalHeaders = nil
         }

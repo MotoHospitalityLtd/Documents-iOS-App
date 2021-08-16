@@ -89,7 +89,7 @@ class LoginVC: UIViewController, HasMenuButton {
                 
 //                self.stateController.directoryController.directoryPath = []
             
-                self.stateController.clearData()
+//                self.stateController.clearData()
                 self.downloadData()
                 
             case .returningUser: // Was the last user that logged in
@@ -122,6 +122,8 @@ class LoginVC: UIViewController, HasMenuButton {
                 else {
                     self.httpErrorAlert(httpError: httpError)
                 }
+                
+                self.stateController.authController.removeUsers()
             }
         }
     }
@@ -151,12 +153,32 @@ class LoginVC: UIViewController, HasMenuButton {
                         
                     case .error(let httpError):
                         spinner.close()
+                        
+                        if httpError.statusCode == "0" {
+                            self.NetworkAlertWithClose()
+                        }
+                            
+                        else {
+                            self.httpErrorAlert(httpError: httpError)
+                        }
+                        
+                        self.stateController.authController.removeUsers()
                         print("ERROR DOWNLOADING DIRECTORIES AND PDF DATA")
                     }
                 }
 
             case .error(let httpError):
                 spinner.close()
+                
+                if httpError.statusCode == "0" {
+                    self.NetworkAlertWithClose()
+                }
+                    
+                else {
+                    self.httpErrorAlert(httpError: httpError)
+                }
+                
+                self.stateController.authController.removeUsers()
                 print("Download directories error")
             }
         }

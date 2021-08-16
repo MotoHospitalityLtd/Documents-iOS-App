@@ -9,11 +9,12 @@ import UIKit
 
 class HostCell: UITableViewCell {
 
+    
+    @IBOutlet weak var statusIcon: UIImageView!
+    
     func drawStatusIcon(forStatus status: HostMO.Status) {
-        let circleLayer = CAShapeLayer()
-        circleLayer.path = UIBezierPath(ovalIn: CGRect(x: 293, y: 16, width: 12, height: 12)).cgPath
-        circleLayer.fillColor = UIColor.init(fromHex: status.iconColour).cgColor
-        self.contentView.layer.addSublayer(circleLayer)
+        statusIcon.image?.withRenderingMode(.alwaysTemplate)
+        statusIcon.tintColor = UIColor.init(fromHex: status.iconColour)
     }
     
 }

@@ -12,6 +12,9 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
     //# MARK: - Data
     var stateController: StateController!
     
+    //# MARK: - Variables
+    var isRefreshing = false
+    
     //# MARK: - IB Outlets
     @IBOutlet weak var tableView: UITableView!
 
@@ -38,8 +41,9 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
         
         configureSearchController()
         configureMenuButton()
+        
+        refreshControlSetup()
     }
-    
     
     //# MARK: - Button Actions
     internal func backTapped(sender: UIBarButtonItem) {
@@ -56,21 +60,91 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
             let documentVC = segue.destination as! DocumentVC
             documentVC.stateController = stateController
 //            searchController.isActive = false
-            
         }
-       
     }
     
-    func downloadDirectories() {
-        print("Download Directories on Directory VC")
+    //# MARK: - Refresh Control
+    func refreshControlSetup() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl!.addTarget(self, action: #selector(downloadData), for: .valueChanged)
+    }
+    
+    func reSetRefreshControl() {
+        tableView.refreshControl!.endRefreshing()
+        tableView.refreshControl?.isEnabled = true
+        tableView.reloadData()
+    }
+    
+    @objc private func downloadData() {
+        
+        let spinner = Spinner()
+        self.view.addSubview(spinner)
+
+//        self.stateController.clearData()
+        
+        isRefreshing = true
+        
         stateController.directoryController.downloadDirectories { response in
             switch response {
             case .success(_):
                 print("Download directories success")
-                self.tableView.reloadData()
+                
+                self.stateController.documentController.downloadDocuments { response in
+                    switch response {
+                    case .success(_ ):
+                        print("SUCCESSFULL DOWNLOAD TEST")
+                        
+                        spinner.close()
+                    
+                        self.stateController.directoryController.currentDirectory = self.stateController.directoryController.rootDirectory
+                        self.stateController.documentController.loadAllDocuments()
+                          
+                        self.isRefreshing = false
+                        
+                        self.instantiateDirectoryNC()
+                        
+                    case .error(let httpError):
+                        spinner.close()
+                        self.isRefreshing = false
+                        
+                        if httpError.statusCode == "0" {
+                            self.NetworkAlertWithClose()
+                        }
+                            
+                        else {
+                            self.httpErrorAlert(httpError: httpError)
+                        }
+                        print("ERROR DOWNLOADING DIRECTORIES AND PDF DATA")
+                    }
+                }
+
             case .error(let httpError):
+                spinner.close()
+                self.isRefreshing = false
+                self.reSetRefreshControl()
+                
+                if httpError.statusCode == "0" {
+                    self.NetworkAlertWithClose()
+                }
+                    
+                else {
+                    self.httpErrorAlert(httpError: httpError)
+                }
+                
                 print("Download directories error")
             }
+        }
+    }
+    
+    //# MARK: - Navigation
+    private func instantiateDirectoryNC() {
+        stateController.directoryController.directoryPath = []
+        
+        if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+            
+            directoryVC.stateController = self.stateController
+            UIApplication.shared.windows.first?.rootViewController = directoryNC
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
         }
     }
     
@@ -88,12 +162,6 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
     @IBAction func unwindFromDocumentVC(segue: UIStoryboardSegue) {
         print("UnWind from DocumentVC")
         tableView.deselectSelectedRow(animated: true)
-        
-//        // Reset current directory
-//        stateController.setCurrentDirectory()
-//
-//        // Refresh tableView
-//        tableView.reloadData()
     }
     
     func unwindFromAboutVC(segue: UIStoryboardSegue) {

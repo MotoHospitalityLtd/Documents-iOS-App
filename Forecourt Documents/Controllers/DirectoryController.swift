@@ -21,11 +21,13 @@ class DirectoryController {
     
     //# MARK: - Controllers:
     let networkController: NetworkController
+    let documentController: DocumentController
     
     //# MARK: - Initialisers
-    init(coreData: CoreData, networkController: NetworkController) {
+    init(coreData: CoreData, networkController: NetworkController, documentController: DocumentController) {
         self.coreData = coreData
         self.networkController = networkController
+        self.documentController = documentController
         
         rootDirectory = loadRootDirectory()
         currentDirectory = rootDirectory
@@ -44,6 +46,8 @@ class DirectoryController {
                         
                         let directoryData = decodedData["data"] as! [[String: AnyObject]]
                         
+                        self.clearData()
+                        
                         self.rootDirectory = DirectoryMO.createRootDirectory(fromJSon: directoryData, withContext: self.coreData.persistentContainer.viewContext)
                         self.currentDirectory = self.rootDirectory
    
@@ -61,6 +65,13 @@ class DirectoryController {
                 }
             }
         }
+    }
+    
+    internal func clearData() {
+        removeAllDirectories()
+        
+        documentController.removeAllDocuments()
+        self.coreData.save(context: self.coreData.persistentContainer.viewContext)
     }
     
     internal func removeAllDirectories() {
