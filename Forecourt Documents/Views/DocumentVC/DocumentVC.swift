@@ -8,10 +8,14 @@
 import UIKit
 import PDFKit
 
-class DocumentVC: UIViewController, HasBackButton, HasMenuButton {
+class DocumentVC: UIViewController, HasBackButton, HasMenuButton, UIScrollViewDelegate {
  
     //# MARK: - Data
     var stateController: StateController!
+    
+    //# MARK: - IB Outlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,38 +25,43 @@ class DocumentVC: UIViewController, HasBackButton, HasMenuButton {
     
     //# MARK: - Setup
     private func uiSetup() {
-        
+        self.title = stateController.documentController.currentDocument?.title
         configureBackButton()
         configureMenuButton()
-        
-        
-        // Create test PDF view
-        let pdfView = PDFView()
+        displayDocument()
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+    
+    private func displayDocument() {
+        if let pdfDocument = PDFDocument(data: stateController.documentController.loadDocumentData()) {
+            
+            let pdfView = PDFView()
 
-        pdfView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(pdfView)
+            pdfView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(pdfView)
 
-        pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-//        guard let path = Bundle.main.url(forResource: "Test PDF 1", withExtension: "pdf") else { return }
-        
-//        if let document = PDFDocument(url: path) {
-
-//            pdfView.document = document
-//        }
-        
-        
-        if let document = PDFDocument(data: stateController.documentController.loadCurrentDocument()) {
-            pdfView.document = document
+            pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+            pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+            
+            pdfView.document = pdfDocument
         }
         
-        
-//        if let document = PDFDocument(data: stateController.pdfData!) {
-//            pdfView.document = document
-//        }
+        if let imageDoc = UIImage(data: stateController.documentController.loadDocumentData()) {
+            scrollView.translatesAutoresizingMaskIntoConstraints = false
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+            
+            scrollView.isHidden = false
+            
+            imageView.image = imageDoc
+        }
     }
     
     //# MARK: - Button Actions

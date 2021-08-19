@@ -119,7 +119,7 @@ class DocumentController {
         fileController.directorySetup()
     }
     
-    internal func loadCurrentDocument() -> Data {
+    internal func loadDocumentData() -> Data {
         
         let documentData = fileController.loadFile(fromPath: currentDocument!.filePath!)
         

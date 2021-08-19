@@ -587,18 +587,39 @@
                     <view key="view" contentMode="scaleToFill" id="bpV-sb-Bh6">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" maximumZoomScale="20" translatesAutoresizingMaskIntoConstraints="NO" id="aio-zU-FCV">
+                                <rect key="frame" x="20" y="70" width="770" height="990"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gew-W8-Xst">
+                                        <rect key="frame" x="0.0" y="0.0" width="770" height="437"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="yuG-Yn-cy3"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fXt-Xe-mrg"/>
+                                <connections>
+                                    <outlet property="delegate" destination="KRA-bC-gHP" id="6AS-Kt-5Dl"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FJv-Hj-LSW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="CZx-wE-azm"/>
                     <connections>
+                        <outlet property="imageView" destination="gew-W8-Xst" id="rEW-s9-ibC"/>
+                        <outlet property="scrollView" destination="aio-zU-FCV" id="lEL-qE-lBs"/>
                         <segue destination="ucc-GH-U85" kind="unwind" identifier="unwindFromDocumentVC" unwindAction="unwindFromDocumentVCWithSegue:" id="3kx-il-ZBw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8M-qK-s9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ucc-GH-U85" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="1"/>
+            <point key="canvasLocation" x="1389.6296296296296" y="0.55555555555555558"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rZV-gm-mER">

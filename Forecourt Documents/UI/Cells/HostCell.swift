@@ -9,12 +9,10 @@ import UIKit
 
 class HostCell: UITableViewCell {
 
-    
     @IBOutlet weak var statusIcon: UIImageView!
     
     func drawStatusIcon(forStatus status: HostMO.Status) {
         statusIcon.image?.withRenderingMode(.alwaysTemplate)
         statusIcon.tintColor = UIColor.init(fromHex: status.iconColour)
     }
-    
 }
