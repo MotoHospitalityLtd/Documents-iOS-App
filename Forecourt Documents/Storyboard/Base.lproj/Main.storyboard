@@ -414,36 +414,6 @@
             </objects>
             <point key="canvasLocation" x="1370" y="-1362"/>
         </scene>
-        <!--MenuVC-->
-        <scene sceneID="E2J-Ei-aA1">
-            <objects>
-                <viewController id="rQk-bP-o6H" customClass="MenuVC" customModule="Forecourt_Documents" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w6S-mD-Ved">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiz-Zd-QOF">
-                                <rect key="frame" x="305" y="353" width="200" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Documents">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="documentsTapped:" destination="rQk-bP-o6H" eventType="touchUpInside" id="hmA-DQ-l43"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="HdV-7O-hMg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="EOh-4t-n7h"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OiS-mY-fEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-967" y="545"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="LNj-S9-yr8">
             <objects>

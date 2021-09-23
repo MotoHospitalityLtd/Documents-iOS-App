@@ -105,4 +105,3 @@ extension ConfigVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-

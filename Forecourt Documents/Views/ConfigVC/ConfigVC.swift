@@ -182,4 +182,3 @@ class ConfigVC: UIViewController, HasBackButton {
         tableView.deselectSelectedRow(animated: true)
     }
 }
-

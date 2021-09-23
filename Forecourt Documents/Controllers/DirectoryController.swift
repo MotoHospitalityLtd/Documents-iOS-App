@@ -95,8 +95,6 @@ class DirectoryController {
         }
     }
     
-    
-    
     private func loadRootDirectory() -> DirectoryMO? {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DirectoryMO")
@@ -114,7 +112,6 @@ class DirectoryController {
             fatalError("Error fetching user")
         }
     }
-    
     
     internal func setCurrentDirectory() {
         

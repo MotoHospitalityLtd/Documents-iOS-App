@@ -69,7 +69,6 @@
 		C8C9D64526A86CB4002D9B91 /* ConfigLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C9D64426A86CB4002D9B91 /* ConfigLoginVC.swift */; };
 		C8C9D64926A8737B002D9B91 /* EditConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C9D64826A8737B002D9B91 /* EditConfigVC.swift */; };
 		C8D506F8269F9732004B6252 /* DirectoryVC+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D506F7269F9732004B6252 /* DirectoryVC+Search.swift */; };
-		C8EF3110269D95AE00429A0C /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EF310F269D95AE00429A0C /* MenuVC.swift */; };
 		C8EF3112269D964800429A0C /* DirectoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EF3111269D964800429A0C /* DirectoryVC.swift */; };
 		C8EF3114269D965C00429A0C /* DirectoryVC+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EF3113269D965C00429A0C /* DirectoryVC+Table.swift */; };
 /* End PBXBuildFile section */
@@ -146,7 +145,6 @@
 		C8C9D64426A86CB4002D9B91 /* ConfigLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLoginVC.swift; sourceTree = "<group>"; };
 		C8C9D64826A8737B002D9B91 /* EditConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditConfigVC.swift; sourceTree = "<group>"; };
 		C8D506F7269F9732004B6252 /* DirectoryVC+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryVC+Search.swift"; sourceTree = "<group>"; };
-		C8EF310F269D95AE00429A0C /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		C8EF3111269D964800429A0C /* DirectoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryVC.swift; sourceTree = "<group>"; };
 		C8EF3113269D965C00429A0C /* DirectoryVC+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryVC+Table.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -277,7 +275,6 @@
 		C8A88D65269C8F1B00F4960B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C8EF310F269D95AE00429A0C /* MenuVC.swift */,
 				C8C9D63626A85E4A002D9B91 /* AboutVC */,
 				C8C9D63D26A86BF1002D9B91 /* ConfigVC */,
 				C8C9D63E26A86C01002D9B91 /* ConfigLoginVC */,
@@ -618,7 +615,6 @@
 				C8C9D64526A86CB4002D9B91 /* ConfigLoginVC.swift in Sources */,
 				C86D688F26A1A391004A0D48 /* DocumentMO+CoreDataClass.swift in Sources */,
 				C845176726C3203200DAD20D /* DocumentController.swift in Sources */,
-				C8EF3110269D95AE00429A0C /* MenuVC.swift in Sources */,
 				C8A88D75269C9D3900F4960B /* UITableView+Extension.swift in Sources */,
 				C8AAA88526C6A67000E82E88 /* DirectoryVC+Alerts.swift in Sources */,
 				C8AB313F26BADF8C00D082CA /* String+Extension.swift in Sources */,
@@ -883,7 +879,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8AA76B726AAEDC500FE9527 /* Dev.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
@@ -967,7 +963,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8AA76B926AB0D5F00FE9527 /* Staging.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
@@ -1045,7 +1041,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8AA76B726AAEDC500FE9527 /* Dev.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
@@ -1123,7 +1119,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8AA76B926AB0D5F00FE9527 /* Staging.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
