@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-               BuildableName = "Documents App.app"
-               BlueprintName = "Documents App"
-               ReferencedContainer = "container:Documents App.xcodeproj">
+               BuildableName = "Forecourt Operations App.app"
+               BlueprintName = "Forecourt Operations App"
+               ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-            BuildableName = "Documents App.app"
-            BlueprintName = "Documents App"
-            ReferencedContainer = "container:Documents App.xcodeproj">
+            BuildableName = "Forecourt Operations App.app"
+            BlueprintName = "Forecourt Operations App"
+            ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-            BuildableName = "Documents App.app"
-            BlueprintName = "Documents App"
-            ReferencedContainer = "container:Documents App.xcodeproj">
+            BuildableName = "Forecourt Operations App.app"
+            BlueprintName = "Forecourt Operations App"
+            ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

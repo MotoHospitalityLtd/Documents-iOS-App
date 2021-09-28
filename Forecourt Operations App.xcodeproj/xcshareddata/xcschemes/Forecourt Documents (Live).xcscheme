@@ -15,15 +15,15 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-               BuildableName = "Documents App.app"
-               BlueprintName = "Documents App"
-               ReferencedContainer = "container:Documents App.xcodeproj">
+               BuildableName = "Forecourt Operations App.app"
+               BlueprintName = "Forecourt Operations App"
+               ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug (Dev)"
+      buildConfiguration = "Debug (Live)"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug (Dev)"
+      buildConfiguration = "Debug (Live)"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,14 +45,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-            BuildableName = "Documents App.app"
-            BlueprintName = "Documents App"
-            ReferencedContainer = "container:Documents App.xcodeproj">
+            BuildableName = "Forecourt Operations App.app"
+            BlueprintName = "Forecourt Operations App"
+            ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release (Dev)"
+      buildConfiguration = "Release (Live)"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -62,17 +62,17 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-            BuildableName = "Documents App.app"
-            BlueprintName = "Documents App"
-            ReferencedContainer = "container:Documents App.xcodeproj">
+            BuildableName = "Forecourt Operations App.app"
+            BlueprintName = "Forecourt Operations App"
+            ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug (Dev)">
+      buildConfiguration = "Debug (Live)">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release (Dev)"
+      buildConfiguration = "Release (Live)"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

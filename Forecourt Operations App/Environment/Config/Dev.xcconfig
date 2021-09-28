@@ -7,6 +7,6 @@
 
 ENVIRONMENT = DEV
 
-DOCUMENT_STORAGE_URL = document-storage-dev.moto-hospitality.co.uk
+DOCUMENT_STORAGE_URL = forecourt-operational-dev.moto-hospitality.co.uk
 
 S3_URL = s3-dev.moto-hospitality.co.uk

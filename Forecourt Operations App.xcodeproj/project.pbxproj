@@ -99,7 +99,7 @@
 		C88DE8E626AACD1600E6E17D /* AboutVC+SimplePing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AboutVC+SimplePing.swift"; sourceTree = "<group>"; };
 		C89DDF7526BD4F1C00DB4B09 /* UserMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C89DDF7826BD69EC00DB4B09 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
-		C8A88D49269C7D1E00F4960B /* Documents App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Documents App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8A88D49269C7D1E00F4960B /* Forecourt Operations App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forecourt Operations App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A88D4C269C7D1E00F4960B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8A88D53269C7D1E00F4960B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8A88D55269C7D2000F4960B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		C8A88D40269C7D1E00F4960B = {
 			isa = PBXGroup;
 			children = (
-				C8A88D4B269C7D1E00F4960B /* Documents App */,
+				C8A88D4B269C7D1E00F4960B /* Forecourt Operations App */,
 				C8A88D4A269C7D1E00F4960B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -197,12 +197,12 @@
 		C8A88D4A269C7D1E00F4960B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8A88D49269C7D1E00F4960B /* Documents App.app */,
+				C8A88D49269C7D1E00F4960B /* Forecourt Operations App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C8A88D4B269C7D1E00F4960B /* Documents App */ = {
+		C8A88D4B269C7D1E00F4960B /* Forecourt Operations App */ = {
 			isa = PBXGroup;
 			children = (
 				C8A88D4C269C7D1E00F4960B /* AppDelegate.swift */,
@@ -219,7 +219,7 @@
 				C8AB313526BADDD300D082CA /* Helpers */,
 				C88DE8E126AAC9B800E6E17D /* Third Party Libraries */,
 			);
-			path = "Documents App";
+			path = "Forecourt Operations App";
 			sourceTree = "<group>";
 		};
 		C8A88D60269C8EE000F4960B /* Models */ = {
@@ -498,9 +498,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8A88D48269C7D1E00F4960B /* Documents App */ = {
+		C8A88D48269C7D1E00F4960B /* Forecourt Operations App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8A88D5D269C7D2000F4960B /* Build configuration list for PBXNativeTarget "Documents App" */;
+			buildConfigurationList = C8A88D5D269C7D2000F4960B /* Build configuration list for PBXNativeTarget "Forecourt Operations App" */;
 			buildPhases = (
 				C8A88D45269C7D1E00F4960B /* Sources */,
 				C8A88D46269C7D1E00F4960B /* Frameworks */,
@@ -510,9 +510,9 @@
 			);
 			dependencies = (
 			);
-			name = "Documents App";
+			name = "Forecourt Operations App";
 			productName = "Forecourt Documents";
-			productReference = C8A88D49269C7D1E00F4960B /* Documents App.app */;
+			productReference = C8A88D49269C7D1E00F4960B /* Forecourt Operations App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -529,7 +529,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C8A88D44269C7D1E00F4960B /* Build configuration list for PBXProject "Documents App" */;
+			buildConfigurationList = C8A88D44269C7D1E00F4960B /* Build configuration list for PBXProject "Forecourt Operations App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -542,7 +542,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8A88D48269C7D1E00F4960B /* Documents App */,
+				C8A88D48269C7D1E00F4960B /* Forecourt Operations App */,
 			);
 		};
 /* End PBXProject section */
@@ -777,7 +777,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
-				INFOPLIST_FILE = "Forecourt Documents/Environment/PList/Live.plist";
+				INFOPLIST_FILE = "Forecourt Operations App/Environment/PList/Live.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,7 +785,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moto.forecourt-documents-live";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Documents/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Operations App/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -799,7 +799,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
-				INFOPLIST_FILE = "Forecourt Documents/Environment/PList/Live.plist";
+				INFOPLIST_FILE = "Forecourt Operations AppEnvironment/PList/Live.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -807,7 +807,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moto.forecourt-documents-live";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Documents/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Operations App/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -883,7 +883,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
-				INFOPLIST_FILE = "Forecourt Documents/Environment/PList/Dev.plist";
+				INFOPLIST_FILE = "Forecourt Operations App/Environment/PList/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -891,7 +891,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moto.forecourt-documents-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Documents/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Operations App/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -967,7 +967,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
-				INFOPLIST_FILE = "Forecourt Documents/Environment/PList/Staging.plist";
+				INFOPLIST_FILE = "Forecourt Operations App/Environment/PList/Staging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -975,7 +975,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moto.forecourt-documents-staging";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Documents/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Operations App/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1045,7 +1045,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
-				INFOPLIST_FILE = "Forecourt Documents/Environment/PList/Dev.plist";
+				INFOPLIST_FILE = "Forecourt Operations App/Environment/PList/Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1053,7 +1053,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moto.forecourt-documents-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Documents/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Operations App/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1123,7 +1123,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26792VELF2;
-				INFOPLIST_FILE = "Forecourt Documents/Environment/PList/Staging.plist";
+				INFOPLIST_FILE = "Forecourt Operations App/Environment/PList/Staging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1131,7 +1131,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moto.forecourt-documents-staging";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Documents/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Forecourt Operations App/Third Party Libraries/Simple Ping/SimplePing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1140,7 +1140,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8A88D44269C7D1E00F4960B /* Build configuration list for PBXProject "Documents App" */ = {
+		C8A88D44269C7D1E00F4960B /* Build configuration list for PBXProject "Forecourt Operations App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8A88D5B269C7D2000F4960B /* Debug (Live) */,
@@ -1153,7 +1153,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release (Live)";
 		};
-		C8A88D5D269C7D2000F4960B /* Build configuration list for PBXNativeTarget "Documents App" */ = {
+		C8A88D5D269C7D2000F4960B /* Build configuration list for PBXNativeTarget "Forecourt Operations App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8A88D5E269C7D2000F4960B /* Debug (Live) */,
