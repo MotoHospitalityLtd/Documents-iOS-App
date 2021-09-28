@@ -15,15 +15,15 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-               BuildableName = "Forecourt Operations App.app"
-               BlueprintName = "Forecourt Operations App"
-               ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
+               BuildableName = "FCT Operations.app"
+               BlueprintName = "FCT Operations"
+               ReferencedContainer = "container:FCT Operations.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug (Staging)"
+      buildConfiguration = "Debug (Live)"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug (Staging)"
+      buildConfiguration = "Debug (Live)"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,14 +45,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-            BuildableName = "Forecourt Operations App.app"
-            BlueprintName = "Forecourt Operations App"
-            ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
+            BuildableName = "FCT Operations.app"
+            BlueprintName = "FCT Operations"
+            ReferencedContainer = "container:FCT Operations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release (Staging)"
+      buildConfiguration = "Release (Live)"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -62,17 +62,17 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8A88D48269C7D1E00F4960B"
-            BuildableName = "Forecourt Operations App.app"
-            BlueprintName = "Forecourt Operations App"
-            ReferencedContainer = "container:Forecourt Operations App.xcodeproj">
+            BuildableName = "FCT Operations.app"
+            BlueprintName = "FCT Operations"
+            ReferencedContainer = "container:FCT Operations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug (Staging)">
+      buildConfiguration = "Debug (Live)">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release (Staging)"
+      buildConfiguration = "Release (Live)"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
