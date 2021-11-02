@@ -21,6 +21,42 @@ public class DirectoryMO: NSManagedObject {
         }
     }
     
+    
+    
+    // User logs in
+    // Create array of ids of local directories and documents
+    
+    // Download directories
+    // LOOP through json directories and compare with local stored ones
+        // Local directory id exists
+            // Yes
+                // Remove ID from array.
+                // Updated time the same?
+                    // Yes
+                        // Do nothing
+                    // No
+                        // Update directory details.
+            // No
+                // Create directory
+    // Loop through remaining array directory ids and delete them as they no longer exist.
+   
+    
+    // Documents to re-download array?
+    // Download documents
+    // Loop through json documents and compare with local stored ones
+        // Local document id exists
+            // Yes
+                // Remove ID from array.
+                // Update time the same?
+                    // Yes
+                        // Do nothing
+                    // No
+                        // Add id to re-download array and update any details.. url, ect.
+            // No
+                // Create document
+    // Loop through remaining array directory ids and delete them as they no longer exist.
+    
+    
     static func createRootDirectory(fromJSon jsonDirectories: [[String: AnyObject]], withContext context: NSManagedObjectContext) -> DirectoryMO {
         var rootDirectories: [DirectoryMO] = []
         

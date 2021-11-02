@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension LoginVC {
     func emptyEmployeeNumberAlert() {
         let alert = UIAlertController(title: "Login Failed", message: "\n The employee number field is empty!", preferredStyle: .alert)

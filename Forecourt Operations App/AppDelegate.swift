@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         return true
     }
     
@@ -45,14 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard !navController.viewControllers.last!.isKind(of: ConfigVC.self) else { return }
         guard !navController.viewControllers.last!.isKind(of: EditConfigVC.self) else { return }
         
-        
         let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         loginVC.stateController = stateController
         
         navController.pushViewController(loginVC, animated: false)
         
         window?.snapshotView(afterScreenUpdates: false)
-    
     }
-
 }

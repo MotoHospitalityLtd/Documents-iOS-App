@@ -28,7 +28,6 @@ class AuthController {
         if let authenticatedUser = authenticateLocally(userCredential: userCredential) {
             print("Authenticated Locally")
         
-            
             // Need to fetch the authenticated user.
             if networkController.authenticatedUser == authenticatedUser {
                 print("Same User Logging in")
