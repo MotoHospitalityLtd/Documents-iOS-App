@@ -149,8 +149,7 @@ class LoginVC: UIViewController, HasMenuButton {
                         self.stateController.documentController.loadAllDocuments()
                           
                         self.instantiateDirectoryNC()
-                        
-                        
+                    
                     case .error(let httpError):
                         spinner.close()
                         

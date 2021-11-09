@@ -63,7 +63,7 @@ class DocumentController {
                         
                         self.saveDocument(document: document, data: data!)
                         
-                        // do stuff with pdf data... save it locally, set local path for loading.
+                        // Do stuff with pdf data... save it locally, set local path for loading.
 
                         group.leave()
                         internalGroup.leave()

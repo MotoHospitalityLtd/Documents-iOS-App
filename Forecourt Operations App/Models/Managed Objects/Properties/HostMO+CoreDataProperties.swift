@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension HostMO {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<HostMO> {

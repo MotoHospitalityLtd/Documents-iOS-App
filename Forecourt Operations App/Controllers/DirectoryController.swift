@@ -16,6 +16,8 @@ class DirectoryController {
     //# MARK: - Variables
     var directoryPath: [Int] = []
     
+    var downloadedDocuments: [Int64] = [] // NEED A WAY TO ONLY DOWNLOAD DOCUMENTS THAT ARE NEEDED
+    
     var rootDirectory: DirectoryMO?
     var currentDirectory: DirectoryMO?
     
@@ -34,7 +36,7 @@ class DirectoryController {
     }
     
     internal func downloadDirectories(completion: @escaping (NetworkController.NetworkResponse) -> Void) {
-
+        
         self.networkController.get(urlPath: "/api/root-directory") { response in
             DispatchQueue.main.async {
                 switch response {
@@ -46,7 +48,7 @@ class DirectoryController {
                         
                         let directoryData = decodedData["data"] as! [[String: AnyObject]]
                         
-                        self.clearData()
+//                        self.clearData()
                         
                         self.rootDirectory = DirectoryMO.createRootDirectory(fromJSon: directoryData, withContext: self.coreData.persistentContainer.viewContext)
                         self.currentDirectory = self.rootDirectory
@@ -75,24 +77,12 @@ class DirectoryController {
     }
     
     internal func removeAllDirectories() {
-        for directory in fetchAllDirectories() {
+        for directory in DirectoryMO.fetchAllDirectories(withContext: coreData.persistentContainer.viewContext) {
             print("Removed directory")
             coreData.persistentContainer.viewContext.delete(directory)
         }
         
         directoryPath = []
-    }
-    
-    private func fetchAllDirectories() -> [DirectoryMO] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DirectoryMO")
-
-        do {
-            return try coreData.persistentContainer.viewContext.fetch(request) as? [DirectoryMO] ?? []
-        }
-
-        catch {
-            fatalError("Error fetching all directories")
-        }
     }
     
     private func loadRootDirectory() -> DirectoryMO? {
