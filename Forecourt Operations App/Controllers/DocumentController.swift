@@ -42,14 +42,17 @@ class DocumentController {
         
         var downloadResponse: NetworkController.NetworkResponse = .success(nil)
         
-        let documents = fetchAllDocuments()
+        let documents = DocumentMO.fetchAllDocuments(withContext: coreData.persistentContainer.viewContext)
         
         for document in documents {
+            
+            guard document.isDownloaded == false else {continue}
+            
             group.enter()
 
             let internalDownloadNumber = downloadItemNumber
 
-            let downloadItem = DispatchWorkItem(block: {
+            let downloadItem = DispatchWorkItem(block: {    
 
                 let internalGroup = DispatchGroup()
                 internalGroup.enter()
@@ -62,6 +65,8 @@ class DocumentController {
                         print("SUCCESSFULLY DOWNLOADED PDF DATA")
                         
                         self.saveDocument(document: document, data: data!)
+                        
+                        document.isDownloaded = true
                         
                         // Do stuff with pdf data... save it locally, set local path for loading.
 
@@ -110,7 +115,7 @@ class DocumentController {
     }
     
     internal func removeAllDocuments() {
-        for document in fetchAllDocuments() {
+        for document in DocumentMO.fetchAllDocuments(withContext: coreData.persistentContainer.viewContext) {
             print("Removed document")
             coreData.persistentContainer.viewContext.delete(document)
         }
@@ -120,7 +125,6 @@ class DocumentController {
     }
     
     internal func loadDocumentData() -> Data {
-        
         let documentData = fileController.loadFile(fromPath: currentDocument!.filePath!)
         
         return documentData!
@@ -128,24 +132,12 @@ class DocumentController {
     
     internal func loadAllDocuments() {
         print("Load All Documents")
-        self.allDocuments = fetchAllDocuments()
+        self.allDocuments = DocumentMO.fetchAllDocuments(withContext: coreData.persistentContainer.viewContext)
         
         print("All Documents")
         print("Document Count \(allDocuments.count)")
         
         self.filteredDocuments = allDocuments
-    }
-    
-    internal func fetchAllDocuments() -> [DocumentMO] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DocumentMO")
-
-        do {
-            return try coreData.persistentContainer.viewContext.fetch(request) as? [DocumentMO] ?? []
-        }
-
-        catch {
-            fatalError("Error fetching all documents")
-        }
     }
     
     private func saveDocument(document: DocumentMO, data: Data) {

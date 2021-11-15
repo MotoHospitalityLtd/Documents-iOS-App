@@ -72,12 +72,12 @@ extension DirectoryVC: UITableViewDelegate, UITableViewDataSource {
             print("Tapped directory cell with no active search criteria")
             if let directory = stateController.directoryController.currentDirectory!.visibleItems[indexPath.row] as? DirectoryMO {
                 
-                print("Visible Items: \(stateController.directoryController.currentDirectory!.visibleItems)")
+//                print("Visible Items: \(stateController.directoryController.currentDirectory!.visibleItems)")
                 
                 stateController.directoryController.directoryPath.append(indexPath.row)
                 stateController.directoryController.currentDirectory = directory
                 
-                print("Directory Path: \(stateController.directoryController.directoryPath)")
+//                print("Directory Path: \(stateController.directoryController.directoryPath)")
                 
                 let directoryVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryVC") as! DirectoryVC
                 directoryVC.stateController = self.stateController

@@ -36,28 +36,6 @@ public class DocumentMO: NSManagedObject {
         return NSSet(array: documents)
     }
     
-//    func updateDocument(fromJson documents: [String: AnyObject], withContext context: NSManagedObjectContext) -> DocumentMO  {
-//        print("UPDATE DOCUMENTS")
-//
-//        var order: Int64 = 1
-//
-//
-//        let newDocument = DocumentMO(context: context)
-//
-//        newDocument.id = document["id"] as! Int64
-//        newDocument.order = order
-//        newDocument.title = document["title"] as? String ?? "Untitled"
-//        newDocument.url = document["url"] as? String ?? "No URL"
-//        newDocument.updatedAt = document["updated_at"] as! Double
-//
-//        order += 1
-////            print("File")
-////            print(document)
-////            print("------------")
-//
-//        return newDocument
-//    }
-    
     static func createDocument(fromJson document: [String: AnyObject], withContext context: NSManagedObjectContext, order: Int64) -> DocumentMO  {
         print("CREATE SINGLE DOCUMENT")
         
@@ -89,14 +67,14 @@ public class DocumentMO: NSManagedObject {
         }
     }
     
-    static func fetchDocument(withId id: Int64, withContext context: NSManagedObjectContext) -> DocumentMO {
+    static func fetchDocument(withId id: Int64, withContext context: NSManagedObjectContext) -> DocumentMO? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DocumentMO")
         let predicateId = NSPredicate(format: "id = %d", id)
 
         request.predicate = predicateId
 
         do {
-            return try context.fetch(request).first as! DocumentMO
+            return try context.fetch(request).first as? DocumentMO
         }
 
         catch {
@@ -104,21 +82,24 @@ public class DocumentMO: NSManagedObject {
         }
     }
     
-//    internal func removeFileOnDisc() {
-//        let fileManager = FileManager.default
-//        let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-//
-//        let fileURL = docs.appendingPathComponent("stock-files/\(fileName)")
-//
-//        if fileManager.fileExists(atPath: fileURL.path) {
-//            do {
-//                print("FILE EXISTS READY TO DELETE")
-//                try fileManager.removeItem(at: fileURL)
-//                print("File: \(fileURL.path) has been removed")
-//            }
-//            catch {
-//                print("File: \(fileURL.path) could not be removed")
-//            }
-//        }
-//    }
+    internal func removeFileOnDisc() {
+        let fileManager = FileManager.default
+        let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+        let fileURL = docs.appendingPathComponent(filePath!)
+        
+        if fileManager.fileExists(atPath: fileURL.path) {
+            do {
+                try fileManager.removeItem(at: fileURL)
+                print("File: \(fileURL.path) has been removed")
+            }
+            catch {
+                print("File: \(fileURL.path) could not be removed")
+            }
+        }
+        
+        else {
+            print("File does not exist")
+        }
+    }
 }
