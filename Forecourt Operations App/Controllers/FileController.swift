@@ -94,6 +94,22 @@ class FileController {
         }
     }
     
+    func removeFile(directory: SaveDirectory) {
+        let directoryPath = documentsDirectory.path + directory.rawValue
+        
+        if pathExists(path: directoryPath) {
+            do {
+                print("Directory exists")
+                try fileManager.removeItem(atPath: directoryPath)
+                print("Directory: \(directoryPath) has been removed")
+            }
+                
+            catch {
+                print("\(directoryPath) could not be removed")
+            }
+        }
+    }
+    
     func loadFile(fromPath path: String) -> Data? {
         print("LOAD FILE")
         let fullPath = documentsDirectory.path + path
@@ -103,7 +119,6 @@ class FileController {
             do {
                 let fileData = try Data(contentsOf: documentsDirectory.appendingPathComponent(path))
                 return fileData
-//                return UIImage(data: imageData)!
             }
             
             catch {
@@ -117,6 +132,24 @@ class FileController {
         
         return nil
     }
+    
+//    func removeFileOnDisc() {
+//        let fileManager = FileManager.default
+//        let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+//
+//        let fileURL = docs.appendingPathComponent("stock-files/\(fileName)")
+//
+//        if fileManager.fileExists(atPath: fileURL.path) {
+//            do {
+//                print("FILE EXISTS READY TO DELETE")
+//                try fileManager.removeItem(at: fileURL)
+//                print("File: \(fileURL.path) has been removed")
+//            }
+//            catch {
+//                print("File: \(fileURL.path) could not be removed")
+//            }
+//        }
+//    }
         
     enum SaveDirectory: String, CaseIterable {
         case documents = "/documents"

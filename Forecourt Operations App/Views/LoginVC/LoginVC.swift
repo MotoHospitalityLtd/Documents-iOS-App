@@ -142,26 +142,25 @@ class LoginVC: UIViewController, HasMenuButton {
                     switch response {
                     case .success(_ ):
                         print("SUCCESSFULL DOWNLOAD TEST")
-                        
+
                         spinner.close()
-                    
+
                         self.stateController.directoryController.currentDirectory = self.stateController.directoryController.rootDirectory
                         self.stateController.documentController.loadAllDocuments()
-                          
+
                         self.instantiateDirectoryNC()
-                        
-                        
+
                     case .error(let httpError):
                         spinner.close()
-                        
+
                         if httpError.statusCode == "0" {
                             self.NetworkAlertWithClose()
                         }
-                            
+
                         else {
                             self.httpErrorAlert(httpError: httpError)
                         }
-                        
+
                         self.stateController.authController.removeUsers()
                         print("ERROR DOWNLOADING DIRECTORIES AND PDF DATA")
                     }

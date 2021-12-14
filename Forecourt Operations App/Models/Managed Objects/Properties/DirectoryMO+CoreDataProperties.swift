@@ -1,8 +1,8 @@
 //
 //  DirectoryMO+CoreDataProperties.swift
-//  Forecourt Documents
+//  FCT Operations
 //
-//  Created by Edwards, Mike on 13/08/2021.
+//  Created by Edwards, Mike on 02/11/2021.
 //
 //
 
@@ -19,6 +19,7 @@ extension DirectoryMO {
     @NSManaged public var id: Int64
     @NSManaged public var name: String?
     @NSManaged public var order: Int64
+    @NSManaged public var updatedAt: Double
     @NSManaged public var documents: NSSet?
     @NSManaged public var parentDirectory: DirectoryMO?
     @NSManaged public var subDirectories: NSSet?

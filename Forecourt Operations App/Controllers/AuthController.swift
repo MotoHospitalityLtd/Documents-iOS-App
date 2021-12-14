@@ -25,50 +25,50 @@ class AuthController {
     internal func authenticateUser(userCredential: UserCredential, completion: @escaping (LoginResponse) -> Void) {
         
         // Attempt to authenticate the user locally (expires after 1 hour).
-        if let authenticatedUser = authenticateLocally(userCredential: userCredential) {
-            print("Authenticated Locally")
-        
-            // Need to fetch the authenticated user.
-            if networkController.authenticatedUser == authenticatedUser {
-                print("Same User Logging in")
-                
-                completion(.returningUser)
-                
-                // Fetch existing user if one exists
-                // Check if it matches given credentials
-                // If it does and it is not expired, login
-                // if it does not match
-                    // network login
-                        // success?
-                            // remove old user
-                            // create new user
-                        // fail
-                            // forward error.
-                
-                // Success
-                    // Returning User (Was the last user that logged in)
-                        // Remove login screen
-                    // NewLogin
-                        // Remove login screen
-                        // Set root screen
-                // Error
-                    // Authentication Error
-                    // Too Many Logins
-                    // No Network
-                    // Other Error
-            }
-            
-            else {
-                print("Different User Logging in")
-                // Set Current User on Network Controller
-                networkController.authenticatedUser = authenticatedUser
-                completion(.newLogin)
-            }
-        }
-        
-        // Attempt to authenticate the user over the network.
-        else {
-            print("Authenticate Remotely")
+//        if let authenticatedUser = authenticateLocally(userCredential: userCredential) {
+//            print("Authenticated Locally")
+//
+//            // Need to fetch the authenticated user.
+//            if networkController.authenticatedUser == authenticatedUser {
+//                print("Same User Logging in")
+//
+//                completion(.returningUser)
+//
+//                // Fetch existing user if one exists
+//                // Check if it matches given credentials
+//                // If it does and it is not expired, login
+//                // if it does not match
+//                    // network login
+//                        // success?
+//                            // remove old user
+//                            // create new user
+//                        // fail
+//                            // forward error.
+//
+//                // Success
+//                    // Returning User (Was the last user that logged in)
+//                        // Remove login screen
+//                    // NewLogin
+//                        // Remove login screen
+//                        // Set root screen
+//                // Error
+//                    // Authentication Error
+//                    // Too Many Logins
+//                    // No Network
+//                    // Other Error
+//            }
+//
+//            else {
+//                print("Different User Logging in")
+//                // Set Current User on Network Controller
+//                networkController.authenticatedUser = authenticatedUser
+//                completion(.newLogin)
+//            }
+//        }
+//
+//        // Attempt to authenticate the user over the network.
+//        else {
+//            print("Authenticate Remotely")
             
             authenticateRemotely(userCredential: userCredential) { response in
                 switch response {
@@ -85,7 +85,7 @@ class AuthController {
                     completion(LoginResponse.error(httpError))
                 }
             }
-        }
+//        }
     }
     
     func createUser(userCredential: UserCredential) -> UserMO {
@@ -135,23 +135,23 @@ class AuthController {
                         // Update or create an existing user and set the current authenticated user
                         
                         // If a local authorised user exists then update their details
-                        if let returningUser = self.fetchUser(withUserCredential: userCredential) {
-                            print("Logged in via network, user already exists")
-                            
-                            returningUser.authToken = authToken
-                            
-                            // Set the expiry to be 1 hour ahead from the current system date.
-                            returningUser.setLoginExpiry()
-                            
-                            self.coreData.save(context: self.coreData.persistentContainer.viewContext)
-                            
-                            self.networkController.authenticatedUser = returningUser
-                            
-                            completion(.returningUser)
-                        }
-                        
-                        // Else remove all users and create a new user setting their token
-                        else {
+//                        if let returningUser = self.fetchUser(withUserCredential: userCredential) {
+//                            print("Logged in via network, user already exists")
+//
+//                            returningUser.authToken = authToken
+//
+//                            // Set the expiry to be 1 hour ahead from the current system date.
+//                            returningUser.setLoginExpiry()
+//
+//                            self.coreData.save(context: self.coreData.persistentContainer.viewContext)
+//
+//                            self.networkController.authenticatedUser = returningUser
+//
+//                            completion(.returningUser)
+//                        }
+//
+//                        // Else remove all users and create a new user setting their token
+//                        else {
                             print("Logged in via network, new user")
                             self.removeUsers()
                             
@@ -163,7 +163,7 @@ class AuthController {
                             self.networkController.authenticatedUser = newUser
                             
                             completion(.newLogin)
-                        }
+//                        }
                     }
                         
                     catch {
