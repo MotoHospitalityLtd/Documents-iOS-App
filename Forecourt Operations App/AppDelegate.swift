@@ -33,17 +33,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         
+        print("DID Enter Background")
+        
         let navController = window?.rootViewController as! UINavigationController
         
-        // Don't add a login screen on any of the following screens:
+        // If the top view controller is ConfigVC, pop back to ConfigLoginVC.
+        if navController.viewControllers.last!.isKind(of: ConfigVC.self) {
+            navController.popViewController(animated: true)
+          
+            return
+        }
+        
+        // If the top view controller is EditConfigVC, pop back to ConfigLoginVC.
+        if navController.viewControllers.last!.isKind(of: EditConfigVC.self) {
+            navController.popViewController(animated: true)
+            navController.popViewController(animated: true)
+
+            return
+        }
+        
+        // Return and don't add a login screen for any of the following screens:
         guard !navController.viewControllers.last!.isKind(of: LoginVC.self) else { return }
         guard !navController.viewControllers.last!.isKind(of: AboutVC.self) else { return }
         guard !navController.viewControllers.last!.isKind(of: ConfigLoginVC.self) else { return }
         
-        // Need some other logic to put a the config login screen or navigate away from the config area on the below screens:
-        guard !navController.viewControllers.last!.isKind(of: ConfigVC.self) else { return }
-        guard !navController.viewControllers.last!.isKind(of: EditConfigVC.self) else { return }
-        
+        // Otherwise display the login screen
         let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         loginVC.stateController = stateController
         
