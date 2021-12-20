@@ -41,10 +41,7 @@ class NetworkController {
         }
     }
     
-    
-    
-    
-    //# MARK: - Sessionnil
+    //# MARK: - Session
     func session(host: Host) -> URLSession {
         let config = URLSessionConfiguration.ephemeral
         switch host {
@@ -61,8 +58,6 @@ class NetworkController {
             config.httpAdditionalHeaders = nil
         }
         
-       
-
         return URLSession(configuration: config)
     }
     

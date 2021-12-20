@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Environment: \(Bundle.main.environment)")
         print("VendorID: \(UIDevice.vendorId)")
         
+        // Setup and inject the StateController.
         stateController = StateController()
         
-        if let navController = window?.rootViewController as? UINavigationController, let loginVC = navController.viewControllers[0] as? LoginVC {
+        if let navController = window?.rootViewController as? MainNavController, let loginVC = navController.viewControllers[0] as? LoginVC {
+            navController.stateController = self.stateController
             loginVC.stateController = self.stateController
         }
         
@@ -33,35 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         
-        print("DID Enter Background")
+        print("Did Enter Background")
         
-        let navController = window?.rootViewController as! UINavigationController
-        
-        // If the top view controller is ConfigVC, pop back to ConfigLoginVC.
-        if navController.viewControllers.last!.isKind(of: ConfigVC.self) {
-            navController.popViewController(animated: true)
-          
-            return
-        }
-        
-        // If the top view controller is EditConfigVC, pop back to ConfigLoginVC.
-        if navController.viewControllers.last!.isKind(of: EditConfigVC.self) {
-            navController.popViewController(animated: true)
-            navController.popViewController(animated: true)
-
-            return
-        }
-        
-        // Return and don't add a login screen for any of the following screens:
-        guard !navController.viewControllers.last!.isKind(of: LoginVC.self) else { return }
-        guard !navController.viewControllers.last!.isKind(of: AboutVC.self) else { return }
-        guard !navController.viewControllers.last!.isKind(of: ConfigLoginVC.self) else { return }
-        
-        // Otherwise display the login screen
-        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        loginVC.stateController = stateController
-        
-        navController.pushViewController(loginVC, animated: false)
+        // Get the navController and determine which screen should display when the app enters the background.
+        let navController = window?.rootViewController as! MainNavController
+        navController.stateController = self.stateController
+        navController.determineView()
         
         window?.snapshotView(afterScreenUpdates: false)
     }

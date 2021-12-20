@@ -63,9 +63,10 @@ class LoginVC: UIViewController, HasMenuButton {
             return
         }
         
+        self.view.isUserInteractionEnabled = false
+        
         // Create a user credential to pass around
         let userCredential = UserCredential(employeeNumber: employeeNumber, dateOfBirth: dateOfBirth)
-    
         loginAttempt(withUserCredential: userCredential)
     }
     
@@ -83,6 +84,8 @@ class LoginVC: UIViewController, HasMenuButton {
             spinner.close()
             
             switch response {
+                
+                
             
             case .newLogin:
                 print("New Login")
@@ -93,7 +96,9 @@ class LoginVC: UIViewController, HasMenuButton {
                 self.downloadData()
                 
             case .returningUser: // Was the last user that logged in
+                self.view.isUserInteractionEnabled = true
                 print("Returning User")
+                
                 
                 if self.navigationController!.viewControllers.count > 1 {
                     print("View Check for over 1")
@@ -106,6 +111,7 @@ class LoginVC: UIViewController, HasMenuButton {
                 
             case .error(let httpError):
                 print("error")
+                self.view.isUserInteractionEnabled = true
                 
                 if httpError.statusCode == "401" {
                     self.authenticationAlert()
@@ -134,6 +140,9 @@ class LoginVC: UIViewController, HasMenuButton {
         self.view.addSubview(spinner)
         
         stateController.directoryController.downloadDirectories { response in
+            
+            
+            
             switch response {
             case .success(_):
                 print("Download directories success")
@@ -144,6 +153,7 @@ class LoginVC: UIViewController, HasMenuButton {
                         print("SUCCESSFULL DOWNLOAD TEST")
 
                         spinner.close()
+                        self.view.isUserInteractionEnabled = true
 
                         self.stateController.directoryController.currentDirectory = self.stateController.directoryController.rootDirectory
                         self.stateController.documentController.loadAllDocuments()
@@ -152,6 +162,7 @@ class LoginVC: UIViewController, HasMenuButton {
 
                     case .error(let httpError):
                         spinner.close()
+                        self.view.isUserInteractionEnabled = true
 
                         if httpError.statusCode == "0" {
                             self.NetworkAlertWithClose()
@@ -168,6 +179,7 @@ class LoginVC: UIViewController, HasMenuButton {
 
             case .error(let httpError):
                 spinner.close()
+                self.view.isUserInteractionEnabled = true
                 
                 if httpError.statusCode == "0" {
                     self.NetworkAlertWithClose()
@@ -185,7 +197,7 @@ class LoginVC: UIViewController, HasMenuButton {
     
     //# MARK: - Navigation
     private func instantiateDirectoryNC() {
-        if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+        if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? MainNavController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
             
             directoryVC.stateController = self.stateController
             UIApplication.shared.windows.first?.rootViewController = directoryNC

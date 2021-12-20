@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80BE91F276CF3C200826B5E /* MainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BE91E276CF3C200826B5E /* MainNavController.swift */; };
 		C813815526C1738800581C84 /* DirectoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813815426C1738800581C84 /* DirectoryController.swift */; };
 		C8194339273171D2008DA0B0 /* DirectoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8194335273171D2008DA0B0 /* DirectoryMO+CoreDataProperties.swift */; };
 		C825A3CC26A98ADF00B2C4E5 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80BE91E276CF3C200826B5E /* MainNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavController.swift; sourceTree = "<group>"; };
 		C813815426C1738800581C84 /* DirectoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryController.swift; sourceTree = "<group>"; };
 		C8194335273171D2008DA0B0 /* DirectoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C825A3CB26A98ADF00B2C4E5 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C80BE91D276CF25F00826B5E /* Nav Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C80BE91E276CF3C200826B5E /* MainNavController.swift */,
+			);
+			path = "Nav Controllers";
+			sourceTree = "<group>";
+		};
 		C86D689926A1E396004A0D48 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +338,7 @@
 		C8A88D6A269C8F7700F4960B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C80BE91D276CF25F00826B5E /* Nav Controllers */,
 				C86D689126A1A41A004A0D48 /* AuthController.swift */,
 				C813815426C1738800581C84 /* DirectoryController.swift */,
 				C845176626C3203200DAD20D /* DocumentController.swift */,
@@ -573,6 +584,7 @@
 				C8C9D64926A8737B002D9B91 /* EditConfigVC.swift in Sources */,
 				C86D689826A1D1F4004A0D48 /* LoginVC.swift in Sources */,
 				C8C84B0E26A04796001EEE53 /* DocumentCell.swift in Sources */,
+				C80BE91F276CF3C200826B5E /* MainNavController.swift in Sources */,
 				C85862D326B95361007EE929 /* ConfigVC+Alerts.swift in Sources */,
 				C86D689626A1A512004A0D48 /* NetworkController+Responses.swift in Sources */,
 				C8AB313D26BADF5F00D082CA /* Date+Extension.swift in Sources */,

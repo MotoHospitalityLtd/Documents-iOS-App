@@ -140,7 +140,7 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
     private func instantiateDirectoryNC() {
         stateController.directoryController.directoryPath = []
         
-        if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? UINavigationController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
+        if let directoryNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DirectoryNC") as? MainNavController, let directoryVC = directoryNC.viewControllers[0] as? DirectoryVC {
             
             directoryVC.stateController = self.stateController
             UIApplication.shared.windows.first?.rootViewController = directoryNC
