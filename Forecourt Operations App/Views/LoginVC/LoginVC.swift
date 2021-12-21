@@ -85,14 +85,13 @@ class LoginVC: UIViewController, HasMenuButton {
             
             switch response {
                 
-                
-            
             case .newLogin:
                 print("New Login")
                 
-//                self.stateController.directoryController.directoryPath = []
-            
-//                self.stateController.clearData()
+                // Working here... new login always occurs. Directory path gets messed up. If same user logging in and no changes then keep the UI Stack otherwise put it to root screen.
+                
+                self.stateController.directoryController.directoryPath = []
+
                 self.downloadData()
                 
             case .returningUser: // Was the last user that logged in
@@ -135,13 +134,10 @@ class LoginVC: UIViewController, HasMenuButton {
     }
     
     private func downloadData() {
-        
         let spinner = Spinner()
         self.view.addSubview(spinner)
         
         stateController.directoryController.downloadDirectories { response in
-            
-            
             
             switch response {
             case .success(_):

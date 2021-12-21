@@ -12,6 +12,9 @@ class MainNavController: UINavigationController {
     var stateController: StateController!
     
     func determineView() {
+        
+        print("STATECONTROLLER")
+        print(stateController)
         // If the top view controller is ConfigVC, pop back to ConfigLoginVC.
         if viewControllers.last!.isKind(of: ConfigVC.self) {
             popViewController(animated: true)
