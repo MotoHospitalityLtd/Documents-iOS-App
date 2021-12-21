@@ -87,26 +87,11 @@ class LoginVC: UIViewController, HasMenuButton {
                 
             case .newLogin:
                 print("New Login")
-                
-                // Working here... new login always occurs. Directory path gets messed up. If same user logging in and no changes then keep the UI Stack otherwise put it to root screen.
+
                 
                 self.stateController.directoryController.directoryPath = []
 
                 self.downloadData()
-                
-            case .returningUser: // Was the last user that logged in
-                self.view.isUserInteractionEnabled = true
-                print("Returning User")
-                
-                
-                if self.navigationController!.viewControllers.count > 1 {
-                    print("View Check for over 1")
-                    self.navigationController!.popViewController(animated: false)
-                }
-
-                else {
-                    self.instantiateDirectoryNC()
-                }
                 
             case .error(let httpError):
                 print("error")

@@ -24,68 +24,19 @@ class AuthController {
     
     internal func authenticateUser(userCredential: UserCredential, completion: @escaping (LoginResponse) -> Void) {
         
-        // Attempt to authenticate the user locally (expires after 1 hour).
-//        if let authenticatedUser = authenticateLocally(userCredential: userCredential) {
-//            print("Authenticated Locally")
-//
-//            // Need to fetch the authenticated user.
-//            if networkController.authenticatedUser == authenticatedUser {
-//                print("Same User Logging in")
-//
-//                completion(.returningUser)
-//
-//                // Fetch existing user if one exists
-//                // Check if it matches given credentials
-//                // If it does and it is not expired, login
-//                // if it does not match
-//                    // network login
-//                        // success?
-//                            // remove old user
-//                            // create new user
-//                        // fail
-//                            // forward error.
-//
-//                // Success
-//                    // Returning User (Was the last user that logged in)
-//                        // Remove login screen
-//                    // NewLogin
-//                        // Remove login screen
-//                        // Set root screen
-//                // Error
-//                    // Authentication Error
-//                    // Too Many Logins
-//                    // No Network
-//                    // Other Error
-//            }
-//
-//            else {
-//                print("Different User Logging in")
-//                // Set Current User on Network Controller
-//                networkController.authenticatedUser = authenticatedUser
-//                completion(.newLogin)
-//            }
-//        }
-//
-//        // Attempt to authenticate the user over the network.
-//        else {
-//            print("Authenticate Remotely")
+        authenticateRemotely(userCredential: userCredential) { response in
+            switch response {
             
-            authenticateRemotely(userCredential: userCredential) { response in
-                switch response {
-                
-                case .newLogin:
-                    completion(.newLogin)
-                    print("Successful remote authentication - New User")
-                    
-                case .returningUser:
-                    completion(.returningUser)
-                    print("Successful remote authentication - Returning User")
-                case .error(let httpError):
-                    print("Error remote authentication")
-                    completion(LoginResponse.error(httpError))
-                }
+            case .newLogin:
+                completion(.newLogin)
+                print("Successful remote authentication - New User")
+
+            case .error(let httpError):
+                print("Error remote authentication")
+                completion(LoginResponse.error(httpError))
             }
-//        }
+        }
+        
     }
     
     func createUser(userCredential: UserCredential) -> UserMO {
@@ -102,21 +53,6 @@ class AuthController {
         return newUser
     }
     
-    private func authenticateLocally(userCredential: UserCredential) -> UserMO? {
-    
-        // Fetch the user with the given details.
-        guard let existingUser = fetchUser(withUserCredential: userCredential) else {return nil}
-        
-        // Check if the users ability to login locally has expired.
-        if existingUser.loginExpired {
-            return nil
-        }
-        
-        else {
-            return existingUser
-        }
-    }
-    
     private func authenticateRemotely(userCredential: UserCredential, completion: @escaping (LoginResponse) -> Void) {
         
         // Encode the user credential
@@ -131,39 +67,18 @@ class AuthController {
                     do {
                         let decodedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: AnyObject]
                         let authToken = decodedData["token"] as! String
+                    
+                        print("Logged in via network, new user")
+                        self.removeUsers()
                         
-                        // Update or create an existing user and set the current authenticated user
+                        let newUser = self.createUser(userCredential: userCredential)
+                        newUser.authToken = authToken
                         
-                        // If a local authorised user exists then update their details
-//                        if let returningUser = self.fetchUser(withUserCredential: userCredential) {
-//                            print("Logged in via network, user already exists")
-//
-//                            returningUser.authToken = authToken
-//
-//                            // Set the expiry to be 1 hour ahead from the current system date.
-//                            returningUser.setLoginExpiry()
-//
-//                            self.coreData.save(context: self.coreData.persistentContainer.viewContext)
-//
-//                            self.networkController.authenticatedUser = returningUser
-//
-//                            completion(.returningUser)
-//                        }
-//
-//                        // Else remove all users and create a new user setting their token
-//                        else {
-                            print("Logged in via network, new user")
-                            self.removeUsers()
-                            
-                            let newUser = self.createUser(userCredential: userCredential)
-                            newUser.authToken = authToken
-                            
-                            self.coreData.save(context: self.coreData.persistentContainer.viewContext)
-                            
-                            self.networkController.authenticatedUser = newUser
-                            
-                            completion(.newLogin)
-//                        }
+                        self.coreData.save(context: self.coreData.persistentContainer.viewContext)
+                        
+                        self.networkController.authenticatedUser = newUser
+                        
+                        completion(.newLogin)
                     }
                         
                     catch {
@@ -251,7 +166,7 @@ class AuthController {
         // Save to Core D
     
     enum LoginResponse {
-        case returningUser
+//        case returningUser
         case newLogin
         case error(NetworkController.HttpError)
     }
