@@ -48,11 +48,6 @@ class DirectoryController {
                         
                         let directoryData = decodedData["data"] as! [[String: AnyObject]]
                         
-//                        self.clearData()
-                        
-//                        self.rootDirectory = DirectoryMO.createRootDirectory(fromJSon: directoryData, withContext: self.coreData.persistentContainer.viewContext)
-                        
-                        
                         self.createFileStructure(fromJson: directoryData)
                         
                         self.currentDirectory = self.rootDirectory

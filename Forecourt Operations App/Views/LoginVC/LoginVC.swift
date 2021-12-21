@@ -43,6 +43,7 @@ class LoginVC: UIViewController, HasMenuButton {
     }
     
     private func textFieldSetup() {
+        // Setup and configure the textfields.
         employeeNumberTextField.becomeFirstResponder()
         
         employeeNumberTextField.configure(withInputRestriction: .number, maxLength: 8)
@@ -50,14 +51,19 @@ class LoginVC: UIViewController, HasMenuButton {
     }
     
     //# MARK: - Button Actions
+    
+    
+    /// Handle a login tap
     @IBAction func loginTapped(_ sender: Any) {
         print("login Tapped")
       
+        // Get the employee number from the textfield, guarding against it being empty.
         guard let employeeNumber = employeeNumberTextField.text, !employeeNumber.isEmpty else {
             emptyEmployeeNumberAlert()
             return
         }
     
+        // Get the date of birth from the textfield, guarding against it being empty.
         guard let dateOfBirth = dateOfBirthTextField.text, !dateOfBirth.isEmpty else {
             emptyDateOfBirthAlert()
             return
@@ -67,6 +73,8 @@ class LoginVC: UIViewController, HasMenuButton {
         
         // Create a user credential to pass around
         let userCredential = UserCredential(employeeNumber: employeeNumber, dateOfBirth: dateOfBirth)
+        
+        // Attempt a login with the created userCredential
         loginAttempt(withUserCredential: userCredential)
     }
     
@@ -87,10 +95,7 @@ class LoginVC: UIViewController, HasMenuButton {
                 
             case .newLogin:
                 print("New Login")
-
-                
                 self.stateController.directoryController.directoryPath = []
-
                 self.downloadData()
                 
             case .error(let httpError):
@@ -210,7 +215,6 @@ class LoginVC: UIViewController, HasMenuButton {
     //# MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("SEGUE")
-       
     }
     
     func unwindFromAboutVC(segue: UIStoryboardSegue) {

@@ -59,7 +59,6 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
         if segue.identifier == "showDocumentVC" {
             let documentVC = segue.destination as! DocumentVC
             documentVC.stateController = stateController
-//            searchController.isActive = false
         }
     }
     
@@ -79,8 +78,6 @@ class DirectoryVC: UIViewController, HasBackButton, HasMenuButton {
         
         let spinner = Spinner()
         self.view.addSubview(spinner)
-
-//        self.stateController.clearData()
         
         isRefreshing = true
         

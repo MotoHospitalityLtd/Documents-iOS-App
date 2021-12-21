@@ -58,6 +58,9 @@ class AuthController {
         // Encode the user credential
         let data = try? JSONEncoder().encode(userCredential)
         
+        print("USER CREDENTIAL")
+        print(userCredential)
+        
         self.networkController.post(urlPath: "/api/auth", data: data) { response in
             DispatchQueue.main.async {
                 switch response {
@@ -93,6 +96,7 @@ class AuthController {
     }
     
     internal func removeUsers() {
+        // Remove
         let users = fetchUsers()
         
         for user in users {
@@ -135,38 +139,7 @@ class AuthController {
         }
     }
     
-    // Login
-        // Does the employeeNumber already exists?
-            // No - Network Login
-            // Yes - Attempt local authentication - stored as hashed data.
-    
-        // Expired?
-            // Yes - Force Network Login
-       
-            // No - Login Locally
-        
-        // Locally
-            // Encrypt login details and if they match a stored user, login
-          
-        // Network
-            // If login successful, create or update user
-            // Set current user
-    
-    // if current user set, and the new login matches the current user, Pop the login screen.
-    // If the users are different then start the app from the initial login screen.
-    
-    // Set current user
-    
-    // Logout
-        // Remove current user
-        // Start app from initial login screen.
-    
-    // Store User
-        // Encrypt
-        // Save to Core D
-    
     enum LoginResponse {
-//        case returningUser
         case newLogin
         case error(NetworkController.HttpError)
     }

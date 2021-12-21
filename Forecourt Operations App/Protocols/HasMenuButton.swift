@@ -65,14 +65,8 @@ extension HasMenuButton {
     
     private func logout(stateController: StateController) {
         if let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
-//        if let loginNC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginNC") as? UINavigationController, let loginVC = loginNC.viewControllers[0] as? LoginVC {
-            
             loginVC.stateController = stateController
-            
-            
             navigationController?.pushViewController(loginVC, animated: true)
-//            UIApplication.shared.windows.first?.rootViewController = loginNC
-//            UIApplication.shared.windows.first?.makeKeyAndVisible()
         }
     }
 }
