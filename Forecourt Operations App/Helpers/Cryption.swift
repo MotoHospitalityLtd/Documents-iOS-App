@@ -8,6 +8,7 @@
 import Foundation
 import CommonCrypto
 
+/// Provides AES256-CBC encryption, decryption and key derivation
 class Cryption {
     var key: Data = Data()
     let iv = Data([5,2,2,4,5,6,6,6,9,0,1,2,3,4,5,6])
@@ -16,6 +17,9 @@ class Cryption {
         self.key = derivateKey(passphrase: "c!j.7j", salt: "%h.j|53")!
     }
     
+    /// Provides AES256-CBC encryption on the given data.
+    /// - Parameter data: The data to encrypt.
+    /// - Returns: The encrypted data string.
     func encrypt(data: Data) -> Data? {
         let outputLength = data.count + kCCBlockSizeAES128
         var outputBuffer = Array<UInt8>(repeating: 0,
@@ -43,6 +47,9 @@ class Cryption {
         return Data(outputBytes)
     }
 
+    /// Decrypt AES256-CBC encrypted data.
+    /// - Parameter data: The data to decrypt.
+    /// - Returns: The dectypted data.
     func decrypt(data cipherData: Data) -> Data? {
         let iv = cipherData.prefix(kCCBlockSizeAES128)
         let cipherTextBytes = cipherData

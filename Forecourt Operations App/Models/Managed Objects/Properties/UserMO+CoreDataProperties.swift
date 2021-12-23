@@ -16,9 +16,13 @@ extension UserMO {
         return NSFetchRequest<UserMO>(entityName: "UserMO")
     }
 
+    /// The local filePath for where the document is stored on the device.
     @NSManaged public var dateOfBirth: String?
+    
+    /// The local filePath for where the document is stored on the device.
     @NSManaged public var employeeNumber: String?
-    @NSManaged public var expiry: Date?
+    
+    /// The local filePath for where the document is stored on the device.
     @NSManaged public var authToken: String?
 
 }

@@ -132,24 +132,6 @@ class FileController {
         
         return nil
     }
-    
-//    func removeFileOnDisc() {
-//        let fileManager = FileManager.default
-//        let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-//
-//        let fileURL = docs.appendingPathComponent("stock-files/\(fileName)")
-//
-//        if fileManager.fileExists(atPath: fileURL.path) {
-//            do {
-//                print("FILE EXISTS READY TO DELETE")
-//                try fileManager.removeItem(at: fileURL)
-//                print("File: \(fileURL.path) has been removed")
-//            }
-//            catch {
-//                print("File: \(fileURL.path) could not be removed")
-//            }
-//        }
-//    }
         
     enum SaveDirectory: String, CaseIterable {
         case documents = "/documents"

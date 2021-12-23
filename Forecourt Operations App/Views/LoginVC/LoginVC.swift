@@ -136,7 +136,6 @@ class LoginVC: UIViewController, HasMenuButton {
                 self.stateController.documentController.downloadDocuments { response in
                     switch response {
                     case .success(_ ):
-                        print("SUCCESSFULL DOWNLOAD TEST")
 
                         spinner.close()
                         self.view.isUserInteractionEnabled = true

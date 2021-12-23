@@ -23,7 +23,6 @@ class DocumentController {
     let networkController: NetworkController
     let fileController: FileController
     
-    
     //# MARK: - Initialisers
     init(coreData: CoreData, networkController: NetworkController) {
         self.coreData = coreData
@@ -33,6 +32,8 @@ class DocumentController {
         loadAllDocuments()
     }
     
+    /// Download and store all documents to disc.
+    /// - Parameter completion: Return a NetworkController.NetworkResponse of success or error(HttpError)
     internal func downloadDocuments(completion: @escaping (NetworkController.NetworkResponse) -> Void) {
         let serialQueue = DispatchQueue(label: "forecourt-documents.data", qos:  .default)
         let group = DispatchGroup()
@@ -112,22 +113,15 @@ class DocumentController {
         }
     }
     
-    internal func removeAllDocuments() {
-        for document in DocumentMO.fetchAllDocuments(withContext: coreData.persistentContainer.viewContext) {
-            print("Removed document")
-            coreData.persistentContainer.viewContext.delete(document)
-        }
-        
-        fileController.removeDirectory(directory: .documents)
-        fileController.directorySetup()
-    }
-    
+    /// Load document data for the currentDocument.
+    /// - Returns: Image data
     internal func loadDocumentData() -> Data {
         let documentData = fileController.loadFile(fromPath: currentDocument!.filePath!)
         
         return documentData!
     }
     
+    /// Load all documents.
     internal func loadAllDocuments() {
         print("Load All Documents")
         self.allDocuments = DocumentMO.fetchAllDocuments(withContext: coreData.persistentContainer.viewContext)
@@ -138,6 +132,10 @@ class DocumentController {
         self.filteredDocuments = allDocuments
     }
     
+    /// Save the given document to disc.
+    /// - Parameters:
+    ///   - document: A documentMO.
+    ///   - data: The image data to save.
     private func saveDocument(document: DocumentMO, data: Data) {
         print("SAVE FILE")
         

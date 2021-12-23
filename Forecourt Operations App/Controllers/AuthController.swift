@@ -23,7 +23,6 @@ class AuthController {
     }
     
     internal func authenticateUser(userCredential: UserCredential, completion: @escaping (LoginResponse) -> Void) {
-        
         authenticateRemotely(userCredential: userCredential) { response in
             switch response {
             
@@ -36,7 +35,6 @@ class AuthController {
                 completion(LoginResponse.error(httpError))
             }
         }
-        
     }
     
     func createUser(userCredential: UserCredential) -> UserMO {
@@ -45,9 +43,6 @@ class AuthController {
         newUser.employeeNumber = userCredential.encryptedEmployeeNumber
         newUser.dateOfBirth = userCredential.encryptedDateOfBirth
 
-        // Set the expiry to be 1 hour ahead from the current system date.
-        newUser.setLoginExpiry()
-        
         coreData.save(context: coreData.persistentContainer.viewContext)
         
         return newUser
@@ -96,7 +91,6 @@ class AuthController {
     }
     
     internal func removeUsers() {
-        // Remove
         let users = fetchUsers()
         
         for user in users {

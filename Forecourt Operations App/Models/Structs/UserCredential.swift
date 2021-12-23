@@ -7,8 +7,6 @@
 
 import Foundation
 
-/// A 
-
 struct UserCredential: Codable {
     var employeeNumber: String
     var dateOfBirth: String

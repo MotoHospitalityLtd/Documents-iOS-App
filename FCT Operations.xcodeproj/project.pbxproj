@@ -69,6 +69,7 @@
 		C8C9D64326A86CA6002D9B91 /* ConfigVC+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C9D64226A86CA6002D9B91 /* ConfigVC+Table.swift */; };
 		C8C9D64526A86CB4002D9B91 /* ConfigLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C9D64426A86CB4002D9B91 /* ConfigLoginVC.swift */; };
 		C8C9D64926A8737B002D9B91 /* EditConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C9D64826A8737B002D9B91 /* EditConfigVC.swift */; };
+		C8CD1301277336DD00DBE7E5 /* Forecourt Operations Document App.docx in Resources */ = {isa = PBXBuildFile; fileRef = C8CD1300277336DD00DBE7E5 /* Forecourt Operations Document App.docx */; };
 		C8D506F8269F9732004B6252 /* DirectoryVC+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D506F7269F9732004B6252 /* DirectoryVC+Search.swift */; };
 		C8EF3112269D964800429A0C /* DirectoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EF3111269D964800429A0C /* DirectoryVC.swift */; };
 		C8EF3114269D965C00429A0C /* DirectoryVC+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EF3113269D965C00429A0C /* DirectoryVC+Table.swift */; };
@@ -146,6 +147,7 @@
 		C8C9D64226A86CA6002D9B91 /* ConfigVC+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigVC+Table.swift"; sourceTree = "<group>"; };
 		C8C9D64426A86CB4002D9B91 /* ConfigLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLoginVC.swift; sourceTree = "<group>"; };
 		C8C9D64826A8737B002D9B91 /* EditConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditConfigVC.swift; sourceTree = "<group>"; };
+		C8CD1300277336DD00DBE7E5 /* Forecourt Operations Document App.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Forecourt Operations Document App.docx"; sourceTree = "<group>"; };
 		C8D506F7269F9732004B6252 /* DirectoryVC+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryVC+Search.swift"; sourceTree = "<group>"; };
 		C8EF3111269D964800429A0C /* DirectoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryVC.swift; sourceTree = "<group>"; };
 		C8EF3113269D965C00429A0C /* DirectoryVC+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DirectoryVC+Table.swift"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				C8A88D6E269C8FC100F4960B /* Extensions */,
 				C8A88D6F269C8FC700F4960B /* Protocols */,
 				C8A88D55269C7D2000F4960B /* Assets.xcassets */,
+				C8CD1300277336DD00DBE7E5 /* Forecourt Operations Document App.docx */,
 				C8C84B0826A02B84001EEE53 /* PDF Files */,
 				C8AB313526BADDD300D082CA /* Helpers */,
 				C88DE8E126AAC9B800E6E17D /* Third Party Libraries */,
@@ -565,6 +568,7 @@
 			files = (
 				C8A88D59269C7D2000F4960B /* LaunchScreen.storyboard in Resources */,
 				C8C84B0A26A02BF2001EEE53 /* Test PDF 1.pdf in Resources */,
+				C8CD1301277336DD00DBE7E5 /* Forecourt Operations Document App.docx in Resources */,
 				C8A88D56269C7D2000F4960B /* Assets.xcassets in Resources */,
 				C8A88D54269C7D1E00F4960B /* Main.storyboard in Resources */,
 			);

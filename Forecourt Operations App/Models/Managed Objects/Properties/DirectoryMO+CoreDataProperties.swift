@@ -16,12 +16,25 @@ extension DirectoryMO {
         return NSFetchRequest<DirectoryMO>(entityName: "DirectoryMO")
     }
 
+    /// The unique directory id from the api.
     @NSManaged public var id: Int64
+    
+    /// The title of the directory.
     @NSManaged public var name: String?
+    
+    /// Used to keep track of the directory ordering.
     @NSManaged public var order: Int64
+    
+    /// The time the directory was last updated or modified.
     @NSManaged public var updatedAt: Double
+    
+    /// The child documents of this directory.
     @NSManaged public var documents: NSSet?
+    
+    /// The parent directory of this directory.
     @NSManaged public var parentDirectory: DirectoryMO?
+    
+    /// The child sub directories of this directory.
     @NSManaged public var subDirectories: NSSet?
 
 }

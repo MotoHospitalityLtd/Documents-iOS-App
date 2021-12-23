@@ -68,22 +68,6 @@ class DirectoryController {
         }
     }
     
-    internal func clearData() {
-        removeAllDirectories()
-        
-        documentController.removeAllDocuments()
-        self.coreData.save(context: self.coreData.persistentContainer.viewContext)
-    }
-    
-    internal func removeAllDirectories() {
-        for directory in DirectoryMO.fetchAllDirectories(withContext: coreData.persistentContainer.viewContext) {
-            print("Removed directory")
-            coreData.persistentContainer.viewContext.delete(directory)
-        }
-        
-        directoryPath = []
-    }
-    
     private func loadRootDirectory() -> DirectoryMO? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DirectoryMO")
 
@@ -323,14 +307,7 @@ class DirectoryController {
             else {
                 print("Non Existing Document - Create New")
                 
-                let newDocument = DocumentMO(context: coreData.persistentContainer.viewContext)
-                
-                newDocument.id = jsonDocument["id"] as! Int64
-                newDocument.order = order
-                newDocument.title = jsonDocument["title"] as? String ?? "Untitled"
-                newDocument.url = jsonDocument["url"] as? String ?? "No URL"
-                newDocument.updatedAt = jsonDocument["updated_at"] as! Double
-                newDocument.isDownloaded = false
+                let newDocument = DocumentMO.createDocument(fromJson: jsonDocument, withContext: coreData.persistentContainer.viewContext, order: order)
                 
                 documents.append(newDocument)
             }

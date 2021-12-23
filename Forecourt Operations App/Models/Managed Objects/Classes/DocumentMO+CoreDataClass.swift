@@ -9,52 +9,35 @@
 import Foundation
 import CoreData
 
+/// This class holds a reference to a single document.
 @objc(DocumentMO)
 public class DocumentMO: NSManagedObject {
-    static func createDocuments(fromJson jsonDocuments: [[String: AnyObject]], withContext context: NSManagedObjectContext) -> NSSet  {
-        var documents: [DocumentMO] = []
-        
-        print("CREATE DOCUMENTS")
-        var order: Int64 = 1
-        for document in jsonDocuments {
-            let newDocument = DocumentMO(context: context)
-            
-            newDocument.id = document["id"] as! Int64
-            newDocument.order = order
-            newDocument.title = document["title"] as? String ?? "Untitled"
-            newDocument.url = document["url"] as? String ?? "No URL"
-            newDocument.updatedAt = document["updated_at"] as! Double
-            
-            documents.append(newDocument)
-            
-            order += 1
-//            print("File")
-//            print(document)
-//            print("------------")
-        }
-        
-        return NSSet(array: documents)
-    }
     
-    static func createDocument(fromJson document: [String: AnyObject], withContext context: NSManagedObjectContext, order: Int64) -> DocumentMO  {
-        print("CREATE SINGLE DOCUMENT")
+    /// Create a DocumentMO from the given json structure.
+    /// - Parameters:
+    ///   - jsonDocument: A json structure of a document.
+    ///   - context: The core data managed object context.
+    /// - Returns: An NSSet of DocumentMO objects.
+   
+    static func createDocument(fromJson jsonDocument: [String: AnyObject], withContext context: NSManagedObjectContext, order: Int64) -> DocumentMO  {
+        print("Create a single document")
         
         let newDocument = DocumentMO(context: context)
         
-        newDocument.id = document["id"] as! Int64
+        newDocument.id = jsonDocument["id"] as! Int64
         newDocument.order = order
-        newDocument.title = document["title"] as? String ?? "Untitled"
-        newDocument.url = document["url"] as? String ?? "No URL"
-        newDocument.updatedAt = document["updated_at"] as! Double
+        newDocument.title = jsonDocument["title"] as? String ?? "Untitled"
+        newDocument.url = jsonDocument["url"] as? String ?? "No URL"
+        newDocument.updatedAt = jsonDocument["updated_at"] as! Double
         newDocument.isDownloaded = false
-        
-//            print("File")
-//            print(document)
-//            print("------------")
         
         return newDocument
     }
     
+    
+    /// Fetch all existing documents.
+    /// - Parameter context: The core data managed object context.
+    /// - Returns: An array of DocumentMO's.
     static func fetchAllDocuments(withContext context: NSManagedObjectContext) -> [DocumentMO] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DocumentMO")
        
@@ -67,6 +50,11 @@ public class DocumentMO: NSManagedObject {
         }
     }
     
+    /// Fetch a single DocumentMO with the given id.
+    /// - Parameters:
+    ///   - id: The id of the DocumentMO
+    ///   - context: The core data managed object context.
+    /// - Returns: A DocumentMO.
     static func fetchDocument(withId id: Int64, withContext context: NSManagedObjectContext) -> DocumentMO? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DocumentMO")
         let predicateId = NSPredicate(format: "id = %d", id)
@@ -82,6 +70,7 @@ public class DocumentMO: NSManagedObject {
         }
     }
     
+    /// Remove this documents file from disc.
     internal func removeFileOnDisc() {
         let fileManager = FileManager.default
         let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
